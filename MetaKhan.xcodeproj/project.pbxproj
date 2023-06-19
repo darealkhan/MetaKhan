@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		8C84B4DA2A40C94C0054A127 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C84B4D92A40C94C0054A127 /* SnapKit */; };
 		8C8ADE0E2A40CA5B0049FA99 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8C8ADE0D2A40CA5B0049FA99 /* Supabase */; };
+		8C8ADE152A40CAEC0049FA99 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8ADE142A40CAEC0049FA99 /* FloatingTextField.swift */; };
+		8C8ADE1F2A40CB9D0049FA99 /* UIView+New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8ADE1E2A40CB9D0049FA99 /* UIView+New.swift */; };
+		8C8ADE2D2A40CD6F0049FA99 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8ADE2C2A40CD6F0049FA99 /* UIStackView+Extensions.swift */; };
+		8C8ADE2F2A40CDA40049FA99 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8ADE2E2A40CDA40049FA99 /* UIView+Extensions.swift */; };
+		8C8ADE322A40D6B90049FA99 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8ADE312A40D6B90049FA99 /* SignInViewController.swift */; };
+		8C8ADE352A40D80A0049FA99 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8ADE342A40D80A0049FA99 /* SignInViewModel.swift */; };
 		8CE8283A2A40C55E0089BB07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE828392A40C55E0089BB07 /* AppDelegate.swift */; };
 		8CE8283C2A40C55E0089BB07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8283B2A40C55E0089BB07 /* SceneDelegate.swift */; };
-		8CE8283E2A40C55E0089BB07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8283D2A40C55E0089BB07 /* ViewController.swift */; };
-		8CE828412A40C55E0089BB07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8283F2A40C55E0089BB07 /* Main.storyboard */; };
 		8CE828432A40C55F0089BB07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CE828422A40C55F0089BB07 /* Assets.xcassets */; };
 		8CE828462A40C55F0089BB07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CE828442A40C55F0089BB07 /* LaunchScreen.storyboard */; };
 		8CE828512A40C55F0089BB07 /* MetaKhanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE828502A40C55F0089BB07 /* MetaKhanTests.swift */; };
@@ -38,11 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C8ADE142A40CAEC0049FA99 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
+		8C8ADE1E2A40CB9D0049FA99 /* UIView+New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+New.swift"; sourceTree = "<group>"; };
+		8C8ADE2C2A40CD6F0049FA99 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		8C8ADE2E2A40CDA40049FA99 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		8C8ADE312A40D6B90049FA99 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		8C8ADE342A40D80A0049FA99 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		8CE828362A40C55E0089BB07 /* MetaKhan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetaKhan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE828392A40C55E0089BB07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CE8283B2A40C55E0089BB07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8CE8283D2A40C55E0089BB07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8CE828402A40C55E0089BB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CE828422A40C55F0089BB07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CE828452A40C55F0089BB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CE828472A40C55F0089BB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +91,8 @@
 		8C8ADE0F2A40CA610049FA99 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				8C8ADE362A40DD830049FA99 /* Colors */,
+				8C8ADE162A40CAEF0049FA99 /* TextFields */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -90,7 +100,7 @@
 		8C8ADE102A40CA670049FA99 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				8CE8283D2A40C55E0089BB07 /* ViewController.swift */,
+				8C8ADE302A40D6A90049FA99 /* Auth */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -106,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				8CE828422A40C55F0089BB07 /* Assets.xcassets */,
-				8CE828472A40C55F0089BB07 /* Info.plist */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -116,10 +125,51 @@
 			children = (
 				8CE828392A40C55E0089BB07 /* AppDelegate.swift */,
 				8CE8283B2A40C55E0089BB07 /* SceneDelegate.swift */,
-				8CE8283F2A40C55E0089BB07 /* Main.storyboard */,
 				8CE828442A40C55F0089BB07 /* LaunchScreen.storyboard */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		8C8ADE162A40CAEF0049FA99 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				8C8ADE142A40CAEC0049FA99 /* FloatingTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		8C8ADE1D2A40CB8E0049FA99 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8C8ADE1E2A40CB9D0049FA99 /* UIView+New.swift */,
+				8C8ADE2C2A40CD6F0049FA99 /* UIStackView+Extensions.swift */,
+				8C8ADE2E2A40CDA40049FA99 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8C8ADE302A40D6A90049FA99 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8C8ADE332A40D6BB0049FA99 /* SingIn */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		8C8ADE332A40D6BB0049FA99 /* SingIn */ = {
+			isa = PBXGroup;
+			children = (
+				8C8ADE312A40D6B90049FA99 /* SignInViewController.swift */,
+				8C8ADE342A40D80A0049FA99 /* SignInViewModel.swift */,
+			);
+			path = SingIn;
+			sourceTree = "<group>";
+		};
+		8C8ADE362A40DD830049FA99 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		8CE8282D2A40C55E0089BB07 = {
@@ -145,6 +195,8 @@
 		8CE828382A40C55E0089BB07 /* MetaKhan */ = {
 			isa = PBXGroup;
 			children = (
+				8CE828472A40C55F0089BB07 /* Info.plist */,
+				8C8ADE1D2A40CB8E0049FA99 /* Extensions */,
 				8C8ADE132A40CA840049FA99 /* App */,
 				8C8ADE122A40CA740049FA99 /* Assets */,
 				8C8ADE112A40CA6C0049FA99 /* SupaBase */,
@@ -285,7 +337,6 @@
 			files = (
 				8CE828462A40C55F0089BB07 /* LaunchScreen.storyboard in Resources */,
 				8CE828432A40C55F0089BB07 /* Assets.xcassets in Resources */,
-				8CE828412A40C55E0089BB07 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,9 +361,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CE8283E2A40C55E0089BB07 /* ViewController.swift in Sources */,
+				8C8ADE322A40D6B90049FA99 /* SignInViewController.swift in Sources */,
+				8C8ADE2F2A40CDA40049FA99 /* UIView+Extensions.swift in Sources */,
 				8CE8283A2A40C55E0089BB07 /* AppDelegate.swift in Sources */,
 				8CE8283C2A40C55E0089BB07 /* SceneDelegate.swift in Sources */,
+				8C8ADE352A40D80A0049FA99 /* SignInViewModel.swift in Sources */,
+				8C8ADE2D2A40CD6F0049FA99 /* UIStackView+Extensions.swift in Sources */,
+				8C8ADE152A40CAEC0049FA99 /* FloatingTextField.swift in Sources */,
+				8C8ADE1F2A40CB9D0049FA99 /* UIView+New.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,14 +405,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8CE8283F2A40C55E0089BB07 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8CE828402A40C55E0089BB07 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8CE828442A40C55F0089BB07 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -494,7 +542,6 @@
 				INFOPLIST_FILE = MetaKhan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -522,7 +569,6 @@
 				INFOPLIST_FILE = MetaKhan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
