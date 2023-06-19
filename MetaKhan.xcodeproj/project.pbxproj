@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C84B4DA2A40C94C0054A127 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C84B4D92A40C94C0054A127 /* SnapKit */; };
+		8C8ADE0E2A40CA5B0049FA99 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8C8ADE0D2A40CA5B0049FA99 /* Supabase */; };
 		8CE8283A2A40C55E0089BB07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE828392A40C55E0089BB07 /* AppDelegate.swift */; };
 		8CE8283C2A40C55E0089BB07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8283B2A40C55E0089BB07 /* SceneDelegate.swift */; };
 		8CE8283E2A40C55E0089BB07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8283D2A40C55E0089BB07 /* ViewController.swift */; };
@@ -56,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C8ADE0E2A40CA5B0049FA99 /* Supabase in Frameworks */,
+				8C84B4DA2A40C94C0054A127 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +80,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C8ADE0F2A40CA610049FA99 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		8C8ADE102A40CA670049FA99 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				8CE8283D2A40C55E0089BB07 /* ViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		8C8ADE112A40CA6C0049FA99 /* SupaBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SupaBase;
+			sourceTree = "<group>";
+		};
+		8C8ADE122A40CA740049FA99 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8CE828422A40C55F0089BB07 /* Assets.xcassets */,
+				8CE828472A40C55F0089BB07 /* Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		8C8ADE132A40CA840049FA99 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8CE828392A40C55E0089BB07 /* AppDelegate.swift */,
+				8CE8283B2A40C55E0089BB07 /* SceneDelegate.swift */,
+				8CE8283F2A40C55E0089BB07 /* Main.storyboard */,
+				8CE828442A40C55F0089BB07 /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		8CE8282D2A40C55E0089BB07 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +145,11 @@
 		8CE828382A40C55E0089BB07 /* MetaKhan */ = {
 			isa = PBXGroup;
 			children = (
-				8CE828392A40C55E0089BB07 /* AppDelegate.swift */,
-				8CE8283B2A40C55E0089BB07 /* SceneDelegate.swift */,
-				8CE8283D2A40C55E0089BB07 /* ViewController.swift */,
-				8CE8283F2A40C55E0089BB07 /* Main.storyboard */,
-				8CE828422A40C55F0089BB07 /* Assets.xcassets */,
-				8CE828442A40C55F0089BB07 /* LaunchScreen.storyboard */,
-				8CE828472A40C55F0089BB07 /* Info.plist */,
+				8C8ADE132A40CA840049FA99 /* App */,
+				8C8ADE122A40CA740049FA99 /* Assets */,
+				8C8ADE112A40CA6C0049FA99 /* SupaBase */,
+				8C8ADE102A40CA670049FA99 /* Screens */,
+				8C8ADE0F2A40CA610049FA99 /* Reusable */,
 			);
 			path = MetaKhan;
 			sourceTree = "<group>";
@@ -143,6 +187,10 @@
 			dependencies = (
 			);
 			name = MetaKhan;
+			packageProductDependencies = (
+				8C84B4D92A40C94C0054A127 /* SnapKit */,
+				8C8ADE0D2A40CA5B0049FA99 /* Supabase */,
+			);
 			productName = MetaKhan;
 			productReference = 8CE828362A40C55E0089BB07 /* MetaKhan.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +263,10 @@
 				Base,
 			);
 			mainGroup = 8CE8282D2A40C55E0089BB07;
+			packageReferences = (
+				8C84B4D82A40C94C0054A127 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8C8ADE0C2A40CA5B0049FA99 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 8CE828372A40C55E0089BB07 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -602,6 +654,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C84B4D82A40C94C0054A127 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		8C8ADE0C2A40CA5B0049FA99 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C84B4D92A40C94C0054A127 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C84B4D82A40C94C0054A127 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		8C8ADE0D2A40CA5B0049FA99 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C8ADE0C2A40CA5B0049FA99 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8CE8282E2A40C55E0089BB07 /* Project object */;
 }
