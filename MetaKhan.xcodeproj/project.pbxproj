@@ -36,6 +36,8 @@
 		684231272A418FCD004E71B9 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 684231262A418FCD004E71B9 /* SkeletonView */; };
 		684231302A419B2C004E71B9 /* BaseNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6842312F2A419B2C004E71B9 /* BaseNavigationManager.swift */; };
 		684231322A419C29004E71B9 /* AuthNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684231312A419C29004E71B9 /* AuthNavigationManager.swift */; };
+		8C42009A2A41C600006A5264 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4200992A41C600006A5264 /* UIImage+Extensions.swift */; };
+		8C700B252A41E253000A7001 /* SecureFloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B242A41E253000A7001 /* SecureFloatingTextField.swift */; };
 		8C84B4DA2A40C94C0054A127 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C84B4D92A40C94C0054A127 /* SnapKit */; };
 		8C8ADE0E2A40CA5B0049FA99 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8C8ADE0D2A40CA5B0049FA99 /* Supabase */; };
 		8C8ADE152A40CAEC0049FA99 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8ADE142A40CAEC0049FA99 /* FloatingTextField.swift */; };
@@ -99,6 +101,8 @@
 		684231232A418359004E71B9 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		6842312F2A419B2C004E71B9 /* BaseNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationManager.swift; sourceTree = "<group>"; };
 		684231312A419C29004E71B9 /* AuthNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationManager.swift; sourceTree = "<group>"; };
+		8C4200992A41C600006A5264 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		8C700B242A41E253000A7001 /* SecureFloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureFloatingTextField.swift; sourceTree = "<group>"; };
 		8C8ADE142A40CAEC0049FA99 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		8C8ADE1E2A40CB9D0049FA99 /* UIView+New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+New.swift"; sourceTree = "<group>"; };
 		8C8ADE2C2A40CD6F0049FA99 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				8C8ADE142A40CAEC0049FA99 /* FloatingTextField.swift */,
+				8C700B242A41E253000A7001 /* SecureFloatingTextField.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				8C8ADE2C2A40CD6F0049FA99 /* UIStackView+Extensions.swift */,
 				8C8ADE2E2A40CDA40049FA99 /* UIView+Extensions.swift */,
 				684231212A417AAF004E71B9 /* UIColor+Extensions.swift */,
+				8C4200992A41C600006A5264 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -523,6 +529,8 @@
 				684231222A417AAF004E71B9 /* UIColor+Extensions.swift in Sources */,
 				684231202A417760004E71B9 /* AppFont.swift in Sources */,
 				8C8ADE2D2A40CD6F0049FA99 /* UIStackView+Extensions.swift in Sources */,
+				8C700B252A41E253000A7001 /* SecureFloatingTextField.swift in Sources */,
+				8C42009A2A41C600006A5264 /* UIImage+Extensions.swift in Sources */,
 				8C8ADE152A40CAEC0049FA99 /* FloatingTextField.swift in Sources */,
 				8C8ADE1F2A40CB9D0049FA99 /* UIView+New.swift in Sources */,
 			);

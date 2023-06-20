@@ -1,8 +1,8 @@
 //
-//  FloatingTextField.swift
+//  SecureFloatingTextField.swift
 //  MetaKhan
 //
-//  Created by Ayxan Seferli on 19.06.23.
+//  Created by Ayxan Seferli on 20.06.23.
 //
 
 import Foundation
@@ -11,13 +11,17 @@ import SnapKit
 import Combine
 import SkeletonView
 
-final class FloatingTextField: UIView {
+final class SecureFloatingTextField: UIView {
   
   private let textChangedSubject = PassthroughSubject<String, Never>()
   
   private var stackView: UIStackView!
   private var placeHolder: UILabel!
   private var textField: UITextField!
+  
+  private var secureToggleButton: UIButton!
+  
+  private var isSecure: Bool = true
   
   override init(frame: CGRect) {
     
@@ -59,8 +63,14 @@ final class FloatingTextField: UIView {
       $0.font = AppFont.poppins(ofSize: 14, weight: .regular)
       $0.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
       $0.textColor = .label
+      $0.isSecureTextEntry = isSecure
       $0.isHidden = true
     }
+    
+    secureToggleButton = UIButton(type: .system)
+    secureToggleButton.setImage(UIImage(named: "textField_eye_ic"), for: .normal)
+    secureToggleButton.tintColor = .systemGray
+    secureToggleButton.addTarget(self, action: #selector(secureToggleTapped), for: .touchUpInside)
     
     textField.delegate = self
     
@@ -74,14 +84,21 @@ final class FloatingTextField: UIView {
     }
     
     addSubViews([
-      stackView
+      stackView,
+      secureToggleButton
     ])
     
     stackView.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(16)
-      make.trailing.equalToSuperview().offset(-16)
+      make.trailing.equalToSuperview().offset(-50)
       make.top.equalToSuperview().offset(10)
       make.bottom.equalToSuperview().offset(-10)
+    }
+    
+    secureToggleButton.snp.makeConstraints { make in
+      make.trailing.equalToSuperview().offset(-16)
+      make.width.height.equalTo(20)
+      make.centerY.equalToSuperview()
     }
   }
   
@@ -102,6 +119,19 @@ final class FloatingTextField: UIView {
     
     guard let text = textField.text else { return }
     textChangedSubject.send(text)
+  }
+  
+  @objc private func secureToggleTapped() {
+    
+    isSecure.toggle()
+    textField.isSecureTextEntry = isSecure
+    
+    switch isSecure {
+    case true:
+      secureToggleButton.setImage(UIImage(named: "textField_eye_ic"), for: .normal)
+    case false:
+      secureToggleButton.setImage(UIImage(named: "textField_eye_crossed_ic"), for: .normal)
+    }
   }
 
   @objc private func showTextfield() {
@@ -136,7 +166,7 @@ final class FloatingTextField: UIView {
   }
 }
 
-extension FloatingTextField: UITextFieldDelegate {
+extension SecureFloatingTextField: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     
     guard let text = textField.text, text.isEmpty else { return }
@@ -150,9 +180,10 @@ extension FloatingTextField: UITextFieldDelegate {
   }
 }
 
-extension FloatingTextField {
+extension SecureFloatingTextField {
   struct Configuration {
     
     let label: String
   }
 }
+

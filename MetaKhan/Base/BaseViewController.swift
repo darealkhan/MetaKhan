@@ -11,13 +11,20 @@ import Combine
 
 protocol BaseViewControllerProtocol {
   
+  var navigationBarTitle: String { get }
+  
   func setupViews()
   func setupBinds()
+  
   func startLoading()
   func stopLoading()
+  
+  func touchDismissKeyboard()
 }
 
 class BaseViewController: UIViewController, BaseViewControllerProtocol {
+  
+  var navigationBarTitle: String { return "" }
   
   var cancellables = Set<AnyCancellable>()
   
@@ -28,6 +35,7 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
     setupViewAppearance()
     setupViews()
     setupBinds()
+    touchDismissKeyboard()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +56,27 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
   
   private func setupNavigationBar() {
     
+    title = navigationBarTitle
+    navigationItem.backBarButtonItem = UIBarButtonItem(
+      title: "",
+      style: .plain,
+      target: nil,
+      action: nil
+    )
+    
+    let backImage = UIImage(named: "app_back_ic")?
+      .withInset(UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 0))
+    
+    navigationController?.navigationBar.backIndicatorImage = backImage
+    navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+    navigationController?.navigationBar.tintColor = .label
+    navigationController?.navigationBar.titleTextAttributes = [
+      NSAttributedString.Key.font: AppFont.poppins(ofSize: 14, weight: .medium)
+    ]
+    navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+    navigationController?.navigationBar.shadowImage = nil
+    
+    navigationController?.navigationBar.backgroundColor = .systemBackground
   }
   
   func setupViews() {}
@@ -55,4 +84,13 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
   
   func startLoading() {}
   func stopLoading() {}
+  
+  func touchDismissKeyboard() {
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTouched))
+    self.view.addGestureRecognizer(tapGesture)
+  }
+  
+  @objc private func viewTouched() {
+    KeyboardHandler.hideKeyboard()
+  }
 }

@@ -15,8 +15,7 @@ extension BaseNavigationManager {
     }
     
     static func pushSignUp() {
-      let signUp = UIViewController()
-      signUp.view.backgroundColor = .yellow
+      let signUp = SignInViewController()
       navigationController?.pushViewController(signUp, animated: true)
     }
   }
