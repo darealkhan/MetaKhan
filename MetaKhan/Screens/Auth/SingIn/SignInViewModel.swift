@@ -7,22 +7,24 @@
 
 import Foundation
 import Combine
+import UIKit
 
-final class SignInViewModel {
+final class SignInViewModel: BaseViewModel {
   
   var signInButtonTappedSubject = PassthroughSubject<Void, Never>()
-  var cancellables = Set<AnyCancellable>()
   
-  init() {
+  override init() {
+    
+    super.init()
     
     setupBinds()
   }
   
-  func setupBinds() {
+  override func setupBinds() {
     
     signInButtonTappedSubject
       .sink {
-        print("tapped")
+        BaseNavigationManager.Auth.pushSignUp()
       }
       .store(in: &cancellables)
   }

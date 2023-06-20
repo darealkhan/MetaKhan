@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Combine
+import SkeletonView
 
 final class PrimaryButton: UIButton {
   
@@ -31,6 +32,8 @@ final class PrimaryButton: UIButton {
     setTitleColor(.black, for: .normal)
     
     setTitle(title, for: .normal)
+    
+    isSkeletonable = true
     
     addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
   }

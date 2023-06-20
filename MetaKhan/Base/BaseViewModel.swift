@@ -13,12 +13,13 @@ protocol BaseViewModelProtocol {
   func setupBinds()
 }
 
-class BaseViewModel {
+class BaseViewModel: BaseViewModelProtocol {
   
   var cancellables = Set<AnyCancellable>()
   
+  func setupBinds() {}
+  
   deinit {
-    
     cancellables = []
   }
 }

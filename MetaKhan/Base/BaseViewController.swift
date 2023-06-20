@@ -9,7 +9,15 @@ import Foundation
 import UIKit
 import Combine
 
-class BaseViewController: UIViewController {
+protocol BaseViewControllerProtocol {
+  
+  func setupViews()
+  func setupBinds()
+  func startLoading()
+  func stopLoading()
+}
+
+class BaseViewController: UIViewController, BaseViewControllerProtocol {
   
   var cancellables = Set<AnyCancellable>()
   

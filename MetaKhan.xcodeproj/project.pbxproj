@@ -33,6 +33,9 @@
 		684231202A417760004E71B9 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6842311F2A417760004E71B9 /* AppFont.swift */; };
 		684231222A417AAF004E71B9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684231212A417AAF004E71B9 /* UIColor+Extensions.swift */; };
 		684231242A418359004E71B9 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684231232A418359004E71B9 /* PrimaryButton.swift */; };
+		684231272A418FCD004E71B9 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 684231262A418FCD004E71B9 /* SkeletonView */; };
+		684231302A419B2C004E71B9 /* BaseNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6842312F2A419B2C004E71B9 /* BaseNavigationManager.swift */; };
+		684231322A419C29004E71B9 /* AuthNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684231312A419C29004E71B9 /* AuthNavigationManager.swift */; };
 		8C84B4DA2A40C94C0054A127 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C84B4D92A40C94C0054A127 /* SnapKit */; };
 		8C8ADE0E2A40CA5B0049FA99 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8C8ADE0D2A40CA5B0049FA99 /* Supabase */; };
 		8C8ADE152A40CAEC0049FA99 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8ADE142A40CAEC0049FA99 /* FloatingTextField.swift */; };
@@ -94,6 +97,8 @@
 		6842311F2A417760004E71B9 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		684231212A417AAF004E71B9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		684231232A418359004E71B9 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		6842312F2A419B2C004E71B9 /* BaseNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationManager.swift; sourceTree = "<group>"; };
+		684231312A419C29004E71B9 /* AuthNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationManager.swift; sourceTree = "<group>"; };
 		8C8ADE142A40CAEC0049FA99 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		8C8ADE1E2A40CB9D0049FA99 /* UIView+New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+New.swift"; sourceTree = "<group>"; };
 		8C8ADE2C2A40CD6F0049FA99 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
@@ -119,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C8ADE0E2A40CA5B0049FA99 /* Supabase in Frameworks */,
+				684231272A418FCD004E71B9 /* SkeletonView in Frameworks */,
 				8C84B4DA2A40C94C0054A127 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +211,15 @@
 				6842311F2A417760004E71B9 /* AppFont.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		684231282A4198CD004E71B9 /* NavigationManager */ = {
+			isa = PBXGroup;
+			children = (
+				6842312F2A419B2C004E71B9 /* BaseNavigationManager.swift */,
+				684231312A419C29004E71B9 /* AuthNavigationManager.swift */,
+			);
+			path = NavigationManager;
 			sourceTree = "<group>";
 		};
 		8C8ADE0F2A40CA610049FA99 /* Reusable */ = {
@@ -305,6 +320,7 @@
 		8CE828382A40C55E0089BB07 /* MetaKhan */ = {
 			isa = PBXGroup;
 			children = (
+				684231282A4198CD004E71B9 /* NavigationManager */,
 				684230EA2A4166E1004E71B9 /* Base */,
 				8CE828472A40C55F0089BB07 /* Info.plist */,
 				8C8ADE1D2A40CB8E0049FA99 /* Extensions */,
@@ -352,6 +368,7 @@
 			packageProductDependencies = (
 				8C84B4D92A40C94C0054A127 /* SnapKit */,
 				8C8ADE0D2A40CA5B0049FA99 /* Supabase */,
+				684231262A418FCD004E71B9 /* SkeletonView */,
 			);
 			productName = MetaKhan;
 			productReference = 8CE828362A40C55E0089BB07 /* MetaKhan.app */;
@@ -428,6 +445,7 @@
 			packageReferences = (
 				8C84B4D82A40C94C0054A127 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8C8ADE0C2A40CA5B0049FA99 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				684231252A418FCD004E71B9 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 8CE828372A40C55E0089BB07 /* Products */;
 			projectDirPath = "";
@@ -496,7 +514,9 @@
 				8CE8283A2A40C55E0089BB07 /* AppDelegate.swift in Sources */,
 				684230E92A41667D004E71B9 /* KeyboardHandler.swift in Sources */,
 				684230F32A41732B004E71B9 /* AppColor.swift in Sources */,
+				684231322A419C29004E71B9 /* AuthNavigationManager.swift in Sources */,
 				8CE8283C2A40C55E0089BB07 /* SceneDelegate.swift in Sources */,
+				684231302A419B2C004E71B9 /* BaseNavigationManager.swift in Sources */,
 				684230EC2A4166ED004E71B9 /* BaseViewController.swift in Sources */,
 				8C8ADE352A40D80A0049FA99 /* SignInViewModel.swift in Sources */,
 				684231242A418359004E71B9 /* PrimaryButton.swift in Sources */,
@@ -838,6 +858,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		684231252A418FCD004E71B9 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		8C84B4D82A40C94C0054A127 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -857,6 +885,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		684231262A418FCD004E71B9 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 684231252A418FCD004E71B9 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
 		8C84B4D92A40C94C0054A127 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8C84B4D82A40C94C0054A127 /* XCRemoteSwiftPackageReference "SnapKit" */;

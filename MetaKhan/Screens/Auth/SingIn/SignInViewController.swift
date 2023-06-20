@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 import Combine
+import SkeletonView
 
 final class SignInViewController: BaseViewController {
   
@@ -24,6 +25,7 @@ final class SignInViewController: BaseViewController {
       $0.text = "Welcome back!"
       $0.font = AppFont.poppins(ofSize: 24, weight: .bold)
       $0.textColor = .label
+      $0.isSkeletonable = true
     }
     
     let subtitleLabel = UILabel.new {
@@ -32,6 +34,7 @@ final class SignInViewController: BaseViewController {
       $0.numberOfLines = 0
       $0.textAlignment = .left
       $0.textColor = .secondaryLabel
+      $0.isSkeletonable = true
     }
     
     emailTextField = FloatingTextField.new {
@@ -84,14 +87,10 @@ final class SignInViewController: BaseViewController {
   }
   
   override func setupBinds() {
-    
-//    viewModel.signInButtonTappedSubject = signInButton.buttonTappedSubject
-    
     signInButton.buttonTappedSubject
       .sink { [weak self] in
         guard let self = self else { return }
-        self.viewModel.signInButtonTappedSubject
-          .send(())
+        self.viewModel.signInButtonTappedSubject.send(())
       }
       .store(in: &cancellables)
   }
