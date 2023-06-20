@@ -1,8 +1,8 @@
 //
-//  SignInViewController.swift
+//  SignUpViewController.swift
 //  MetaKhan
 //
-//  Created by Ayxan Seferli on 19.06.23.
+//  Created by Ayxan Seferli on 20.06.23.
 //
 
 import Foundation
@@ -11,18 +11,18 @@ import SnapKit
 import Combine
 import SkeletonView
 
-final class SignInViewController: BaseViewController {
+final class SignUpViewController: BaseViewController {
   
-  override var isNavigationBarSeperatorAvailable: Bool { return false }
+  override var navigationBarTitle: String { return "Sign Up" }
   
   private var scrollView = AppScrollView()
   
   private var emailTextField: FloatingTextField!
   private var passwordTextField: SecureFloatingTextField!
-  private var signUpButton: ButtonWithLabel!
-  private var signInButton: PrimaryButton!
+  private var signInButton: ButtonWithLabel!
+  private var signUpButton: PrimaryButton!
   
-  private var viewModel = SignInViewModel()
+  private var viewModel = SignUpViewModel()
   private var keyboardHandler = KeyboardHandler()
   
   override func setupViews() {
@@ -30,13 +30,13 @@ final class SignInViewController: BaseViewController {
     scrollView = AppScrollView()
     
     let titleLabel = UILabel.new {
-      $0.text = "Welcome back! 😎"
+      $0.text = "Heyy! 🧐"
       $0.font = AppFont.poppins(ofSize: 24, weight: .bold)
       $0.textColor = .label
     }
     
     let subtitleLabel = UILabel.new {
-      $0.text = "Sign in to MetaKhan and start meeting new people ❤️‍🔥, exploring new things, sharing your own moments and etc. 🤪"
+      $0.text = "Why u don't have an account yet? 😱 Sign Up just with your email and password now and enjoy every moment with MetaKhan! 😜"
       $0.font = AppFont.poppins(ofSize: 14, weight: .regular)
       $0.numberOfLines = 0
       $0.textAlignment = .left
@@ -51,9 +51,9 @@ final class SignInViewController: BaseViewController {
       $0.setupTextField(with: SecureFloatingTextField.Configuration(label: "Password"))
     }
     
-    signUpButton = ButtonWithLabel(text: "Don't have an account? Sign Up!", actionText: "Sign Up!")
+    signInButton = ButtonWithLabel(text: "Do you have an account? Sign In!", actionText: "Sign In!")
     
-    signInButton = PrimaryButton(title: "Sign in")
+    signUpButton = PrimaryButton(title: "Sign Up")
     
     scrollView.contentView.addSubViews([
       titleLabel,
@@ -69,7 +69,7 @@ final class SignInViewController: BaseViewController {
     ])
     
     titleLabel.snp.makeConstraints { make in
-      make.top.equalToSuperview()
+      make.top.equalToSuperview().offset(20)
       make.leading.equalToSuperview().offset(20)
       make.trailing.equalToSuperview().offset(-20)
     }
@@ -101,12 +101,12 @@ final class SignInViewController: BaseViewController {
       make.bottom.equalTo(signUpButton.snp.top).offset(-16)
     }
     
-    signUpButton.snp.makeConstraints { make in
-      make.bottom.equalTo(signInButton.snp.top).offset(-16)
+    signInButton.snp.makeConstraints { make in
+      make.bottom.equalTo(signUpButton.snp.top).offset(-16)
       make.centerX.equalToSuperview()
     }
     
-    signInButton.snp.makeConstraints { make in
+    signUpButton.snp.makeConstraints { make in
       make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
       make.leading.equalToSuperview().offset(20)
       make.trailing.equalToSuperview().offset(-20)
@@ -159,7 +159,7 @@ final class SignInViewController: BaseViewController {
     startSkeletoning([
       emailTextField,
       passwordTextField,
-      signInButton
+      signUpButton
     ])
   }
   
@@ -168,15 +168,15 @@ final class SignInViewController: BaseViewController {
     stopSkeletoning([
       emailTextField,
       passwordTextField,
-      signInButton
+      signUpButton
     ])
   }
 }
 
-extension SignInViewController: KeyboardHandlerDelegate {
+extension SignUpViewController: KeyboardHandlerDelegate {
   func keyboardWillShow(bottomOffset: CGFloat, animationDuration: Double) {
     UIView.animate(withDuration: animationDuration) {
-      self.signInButton.snp.updateConstraints { make in
+      self.signUpButton.snp.updateConstraints { make in
         make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-bottomOffset)
       }
       
@@ -186,7 +186,7 @@ extension SignInViewController: KeyboardHandlerDelegate {
   
   func keyboardWillHide(animationDuration: Double) {
     UIView.animate(withDuration: animationDuration) {
-      self.signInButton.snp.updateConstraints { make in
+      self.signUpButton.snp.updateConstraints { make in
         make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
       }
       

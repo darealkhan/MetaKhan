@@ -126,11 +126,13 @@ final class SecureFloatingTextField: UIView {
     isSecure.toggle()
     textField.isSecureTextEntry = isSecure
     
-    switch isSecure {
-    case true:
-      secureToggleButton.setImage(UIImage(named: "textField_eye_ic"), for: .normal)
-    case false:
-      secureToggleButton.setImage(UIImage(named: "textField_eye_crossed_ic"), for: .normal)
+    var buttonImage: String {
+      guard isSecure else { return "textField_eye_crossed_ic" }
+      return "textField_eye_ic"
+    }
+    
+    UIView.transition(with: secureToggleButton, duration: 0.2, options: .transitionCrossDissolve) {
+      self.secureToggleButton.setImage(UIImage(named: buttonImage), for: .normal)
     }
   }
 

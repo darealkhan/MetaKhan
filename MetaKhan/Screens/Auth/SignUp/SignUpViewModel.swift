@@ -1,15 +1,15 @@
 //
-//  SignInViewModel.swift
+//  SignUpViewModel.swift
 //  MetaKhan
 //
-//  Created by Ayxan Seferli on 19.06.23.
+//  Created by Ayxan Seferli on 20.06.23.
 //
 
 import Foundation
 import Combine
 import UIKit
 
-final class SignInViewModel: BaseViewModel {
+final class SignUpViewModel: BaseViewModel {
   
   private let service = UserService()
   
@@ -34,14 +34,14 @@ final class SignInViewModel: BaseViewModel {
   override func setupBinds() {
     
     signInButtonTappedSubject
-      .sink { [weak self] in
-        guard let self = self else { return }
-        self.signIn()
+      .sink {
+        NavigationManager.shared.pop()
       }.store(in: &cancellables)
     
     signUpButtonTappedSubject
-      .sink {
-        NavigationManager.shared.changeRoot(with: MainTabBarViewController())
+      .sink { [weak self] in
+        guard let self = self else { return }
+        self.signUp()
       }.store(in: &cancellables)
     
     emailChangedSubject
@@ -57,13 +57,13 @@ final class SignInViewModel: BaseViewModel {
       }.store(in: &cancellables)
   }
   
-  func signIn() {
+  func signUp() {
     
     startLoadingSubject.send(())
     
     Task {
       
-      let result = await service.signIn(with: email, password: password)
+      let result = await service.signUp(with: email, password: password)
       
       stopLoadingSubject.send(())
       

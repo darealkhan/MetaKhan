@@ -20,7 +20,7 @@ final class KeyboardHandler {
   weak var delegate: KeyboardHandlerDelegate?
   private let offset: CGFloat
   
-  init(offset: CGFloat = 20) {
+  init(offset: CGFloat = 0) {
     
     self.offset = offset
     setupKeyboardNotifications()

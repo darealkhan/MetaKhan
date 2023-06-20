@@ -15,7 +15,7 @@ extension NavigationManager {
     }
     
     static func pushSignUp() {
-      let signUp = SignInViewController()
+      let signUp = SignUpViewController()
       navigationController?.pushViewController(signUp, animated: true)
     }
   }

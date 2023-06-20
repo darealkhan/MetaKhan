@@ -26,10 +26,13 @@ struct NavigationManager {
     self.navigationController = navigationController
   }
   
-  mutating func changeRoot(with controller: UINavigationController) {
+  mutating func changeRoot(with controller: UIViewController) {
     window?.rootViewController = controller
     window?.makeKeyAndVisible()
-    self.navigationController = controller
+  }
+  
+  func pop() {
+    navigationController?.popViewController(animated: true)
   }
   
   func getNavigationController() -> UINavigationController? {

@@ -26,7 +26,7 @@ protocol BaseViewControllerProtocol {
 class BaseViewController: UIViewController, BaseViewControllerProtocol {
   
   var navigationBarTitle: String { return "" }
-  var isNavigationBarSeperatorAvailable: Bool { return false }
+  var isNavigationBarSeperatorAvailable: Bool { return true }
   
   var cancellables = Set<AnyCancellable>()
   

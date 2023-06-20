@@ -10,6 +10,7 @@ import Supabase
 
 protocol UserServiceType {
   func signIn(with email: String, password: String) async -> UserService.SignInPartialState
+  func signUp(with email: String, password: String) async -> UserService.SignUpPartialState
 }
 
 final class UserService: UserServiceType {
@@ -19,7 +20,16 @@ final class UserService: UserServiceType {
     do {
       let result = try await manager.client.auth
         .signIn(email: email, password: password)
-      print(result.user.id)
+      return .success
+    } catch {
+      return .failure
+    }
+  }
+  
+  func signUp(with email: String, password: String) async -> SignUpPartialState {
+    do {
+      let result = try await manager.client.auth
+        .signUp(email: email, password: password, redirectTo: nil)
       return .success
     } catch {
       return .failure
@@ -29,6 +39,11 @@ final class UserService: UserServiceType {
 
 extension UserService {
   enum SignInPartialState {
+    case success
+    case failure
+  }
+  
+  enum SignUpPartialState {
     case success
     case failure
   }
