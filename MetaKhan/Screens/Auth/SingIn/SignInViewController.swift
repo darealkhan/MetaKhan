@@ -26,7 +26,6 @@ final class SignInViewController: BaseViewController {
   private var keyboardHandler = KeyboardHandler()
   
   override func setupViews() {
-    
     scrollView = AppScrollView()
     
     let titleLabel = UILabel.new {
@@ -114,7 +113,6 @@ final class SignInViewController: BaseViewController {
   }
   
   override func setupBinds() {
-    
     keyboardHandler.delegate = self
     
     viewModel.startLoadingSubject
@@ -155,7 +153,6 @@ final class SignInViewController: BaseViewController {
   }
   
   override func startLoading() {
-    
     startSkeletoning([
       emailTextField,
       passwordTextField,
@@ -164,7 +161,6 @@ final class SignInViewController: BaseViewController {
   }
   
   override func stopLoading() {
-    
     stopSkeletoning([
       emailTextField,
       passwordTextField,
@@ -174,6 +170,7 @@ final class SignInViewController: BaseViewController {
 }
 
 extension SignInViewController: KeyboardHandlerDelegate {
+  
   func keyboardWillShow(bottomOffset: CGFloat, animationDuration: Double) {
     UIView.animate(withDuration: animationDuration) {
       self.signInButton.snp.updateConstraints { make in

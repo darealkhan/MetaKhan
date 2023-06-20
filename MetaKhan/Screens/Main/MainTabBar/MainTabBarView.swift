@@ -14,14 +14,12 @@ final class MainTabBarView: UIView {
   private var collectionView: UICollectionView!
   
   override init(frame: CGRect) {
-    
     super.init(frame: frame)
     
     setupViews()
   }
   
   required init?(coder: NSCoder) {
-    
     fatalError("init(coder:) has not been implemented")
   }
   
@@ -33,7 +31,7 @@ final class MainTabBarView: UIView {
     collectionView.delegate = self
     collectionView.dataSource = self
     
-    collectionView.register(<#T##cell: C.Type##C.Type#>)
+    collectionView.register(MainTabBarCell.self)
     collectionView.backgroundColor = .red
     
     addSubview(collectionView)
@@ -56,7 +54,7 @@ extension MainTabBarView: UICollectionViewDelegate, UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+    let cell = collectionView.reusable(MainTabBarCell.self, for: indexPath)
     let color = indexPath.row % 2 == 0 ? UIColor.green : UIColor.red
     cell.backgroundColor = color
     cell.contentView.backgroundColor = color

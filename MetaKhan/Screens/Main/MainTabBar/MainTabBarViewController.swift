@@ -12,14 +12,12 @@ import SnapKit
 final class MainTabBarViewController: UITabBarController {
 
   override func viewDidLoad() {
-    
     super.viewDidLoad()
     
     setupViews()
   }
   
   private func setupViews() {
-    
     let tabBarView = MainTabBarView()
     let spaceOnBottom = UIView.new {
       $0.backgroundColor = .systemBackground
@@ -39,5 +37,16 @@ final class MainTabBarViewController: UITabBarController {
       make.top.equalTo(view.safeAreaLayoutGuide.snp.bottom)
       make.bottom.leading.trailing.equalToSuperview()
     }
+  }
+}
+
+extension MainTabBarViewController {
+  
+  enum TabBarItem: Int {
+    case home
+    case search
+    case share
+    case chats
+    case profile
   }
 }

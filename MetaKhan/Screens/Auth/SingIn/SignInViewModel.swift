@@ -25,14 +25,12 @@ final class SignInViewModel: BaseViewModel {
   var stopLoadingSubject = PassthroughSubject<Void, Never>()
   
   override init() {
-    
     super.init()
     
     setupBinds()
   }
   
   override func setupBinds() {
-    
     signInButtonTappedSubject
       .sink { [weak self] in
         guard let self = self else { return }
@@ -58,7 +56,6 @@ final class SignInViewModel: BaseViewModel {
   }
   
   func signIn() {
-    
     startLoadingSubject.send(())
     
     Task {

@@ -53,6 +53,7 @@
 		8C700B532A423124000A7001 /* MainTabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B522A423124000A7001 /* MainTabBarCell.swift */; };
 		8C700B552A423131000A7001 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B542A423131000A7001 /* UICollectionView+Extensions.swift */; };
 		8C700B592A4231AE000A7001 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B582A4231AE000A7001 /* BaseCollectionViewCell.swift */; };
+		8C700B5B2A423A3A000A7001 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B5A2A423A3A000A7001 /* ImageButton.swift */; };
 		8C84B4DA2A40C94C0054A127 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C84B4D92A40C94C0054A127 /* SnapKit */; };
 		8C8ADE0E2A40CA5B0049FA99 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8C8ADE0D2A40CA5B0049FA99 /* Supabase */; };
 		8C8ADE152A40CAEC0049FA99 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8ADE142A40CAEC0049FA99 /* FloatingTextField.swift */; };
@@ -132,6 +133,7 @@
 		8C700B522A423124000A7001 /* MainTabBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCell.swift; sourceTree = "<group>"; };
 		8C700B542A423131000A7001 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		8C700B582A4231AE000A7001 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		8C700B5A2A423A3A000A7001 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		8C8ADE142A40CAEC0049FA99 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		8C8ADE1E2A40CB9D0049FA99 /* UIView+New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+New.swift"; sourceTree = "<group>"; };
 		8C8ADE2C2A40CD6F0049FA99 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				684231232A418359004E71B9 /* PrimaryButton.swift */,
 				8C700B372A41F109000A7001 /* TextButton.swift */,
 				8C700B3A2A41F4C5000A7001 /* ButtonWithLabel.swift */,
+				8C700B5A2A423A3A000A7001 /* ImageButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				8C42009A2A41C600006A5264 /* UIImage+Extensions.swift in Sources */,
 				8C700B2B2A41E9FF000A7001 /* SupabaseManager.swift in Sources */,
 				8C8ADE152A40CAEC0049FA99 /* FloatingTextField.swift in Sources */,
+				8C700B5B2A423A3A000A7001 /* ImageButton.swift in Sources */,
 				8C8ADE1F2A40CB9D0049FA99 /* UIView+New.swift in Sources */,
 				8C700B3B2A41F4C5000A7001 /* ButtonWithLabel.swift in Sources */,
 			);
