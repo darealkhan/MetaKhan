@@ -12,8 +12,8 @@ protocol NavigationManagerProtocol {
   static var navigationController: UINavigationController? { get }
 }
 
-struct BaseNavigationManager {
-  static var shared = BaseNavigationManager()
+struct NavigationManager {
+  static var shared = NavigationManager()
   
   var window: UIWindow?
   var navigationController: UINavigationController?

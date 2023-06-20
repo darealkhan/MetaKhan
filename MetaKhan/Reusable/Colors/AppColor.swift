@@ -10,6 +10,6 @@ import UIKit
 
 struct AppColor {
   static var primaryColor: UIColor {
-    return UIColor(hex: "#FAF0E4")
+    return UIColor(hex: "#9376E0")
   }
 }

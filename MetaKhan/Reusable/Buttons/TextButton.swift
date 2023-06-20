@@ -1,8 +1,8 @@
 //
-//  PrimaryButton.swift
+//  TextButton.swift
 //  MetaKhan
 //
-//  Created by Ayxan Səfərli on 20.06.23.
+//  Created by Ayxan Seferli on 20.06.23.
 //
 
 import Foundation
@@ -10,7 +10,7 @@ import UIKit
 import Combine
 import SkeletonView
 
-final class PrimaryButton: UIButton {
+final class TextButton: UIButton {
   
   let buttonTappedSubject = PassthroughSubject<Void, Never>()
   
@@ -19,17 +19,17 @@ final class PrimaryButton: UIButton {
     super.init(frame: frame)
   }
   
-  convenience init(title: String) {
+  convenience init(
+    title: String,
+    fontSize: CGFloat = 14,
+    fontWeight: PoppinsFontWeight = .regular
+  ) {
     
     self.init(frame: .zero)
     
-    layer.cornerRadius = 12
-    layer.masksToBounds = true
+    titleLabel?.font = AppFont.poppins(ofSize: fontSize, weight: fontWeight)
     
-    titleLabel?.font = AppFont.poppins(ofSize: 16, weight: .semiBold)
-    
-    backgroundColor = AppColor.primaryColor
-    setTitleColor(.white, for: .normal)
+    setTitleColor(AppColor.primaryColor, for: .normal)
     
     setTitle(title, for: .normal)
     
@@ -65,10 +65,5 @@ final class PrimaryButton: UIButton {
       
       super.isHighlighted = newValue
     }
-  }
-  
-  override var intrinsicContentSize: CGSize {
-    
-    return CGSize(width: 0, height: 56)
   }
 }

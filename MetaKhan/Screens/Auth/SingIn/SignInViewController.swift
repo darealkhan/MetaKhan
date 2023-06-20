@@ -13,13 +13,18 @@ import SkeletonView
 
 final class SignInViewController: BaseViewController {
   
+  private var scrollView = AppScrollView()
+  
   private var emailTextField: FloatingTextField!
   private var passwordTextField: SecureFloatingTextField!
+  private var signUpButton: ButtonWithLabel!
   private var signInButton: PrimaryButton!
   
   private var viewModel = SignInViewModel()
   
   override func setupViews() {
+    
+    scrollView = AppScrollView()
     
     let titleLabel = UILabel.new {
       $0.text = "Welcome back!"
@@ -43,18 +48,25 @@ final class SignInViewController: BaseViewController {
       $0.setupTextField(with: SecureFloatingTextField.Configuration(label: "Password"))
     }
     
+    signUpButton = ButtonWithLabel(text: "Don't have account? Sign Up!", actionText: "Sign Up!")
+    
     signInButton = PrimaryButton(title: "Sign in")
     
-    view.addSubViews([
+    scrollView.contentView.addSubViews([
       titleLabel,
       subtitleLabel,
       emailTextField,
-      passwordTextField,
+      passwordTextField
+    ])
+    
+    view.addSubViews([
+      scrollView,
+      signUpButton,
       signInButton
     ])
     
     titleLabel.snp.makeConstraints { make in
-      make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+      make.top.equalToSuperview()
       make.leading.equalToSuperview().offset(20)
       make.trailing.equalToSuperview().offset(-20)
     }
@@ -77,6 +89,18 @@ final class SignInViewController: BaseViewController {
       make.leading.equalToSuperview().offset(20)
       make.trailing.equalToSuperview().offset(-20)
       make.height.equalTo(56)
+      make.bottom.equalToSuperview()
+    }
+    
+    scrollView.snp.makeConstraints { make in
+      make.top.equalToSuperview()
+      make.leading.trailing.equalToSuperview()
+      make.bottom.equalTo(signUpButton.snp.top).offset(-16)
+    }
+    
+    signUpButton.snp.makeConstraints { make in
+      make.bottom.equalTo(signInButton.snp.top).offset(-16)
+      make.centerX.equalToSuperview()
     }
     
     signInButton.snp.makeConstraints { make in
@@ -88,23 +112,58 @@ final class SignInViewController: BaseViewController {
   
   override func setupBinds() {
     
+    viewModel.startLoadingSubject
+      .sink { [weak self] in
+        guard let self = self else { return }
+        self.startLoading()
+      }.store(in: &cancellables)
+    
+    viewModel.stopLoadingSubject
+      .sink { [weak self] in
+        guard let self = self else { return }
+        self.stopLoading()
+      }.store(in: &cancellables)
+    
     signInButton.buttonTappedSubject
       .sink { [weak self] in
         guard let self = self else { return }
         self.viewModel.signInButtonTappedSubject.send(())
-      }
-      .store(in: &cancellables)
+      }.store(in: &cancellables)
+    
+    signUpButton.buttonTappedSubject
+      .sink { [weak self] in
+        guard let self = self else { return }
+        self.viewModel.signUpButtonTappedSubject.send(())
+      }.store(in: &cancellables)
+    
+    emailTextField.textChangedSubject
+      .sink { [weak self] email in
+        guard let self = self else { return }
+        self.viewModel.emailChangedSubject.send(email)
+      }.store(in: &cancellables)
+    
+    passwordTextField.textChangedSubject
+      .sink { [weak self] password in
+        guard let self = self else { return }
+        self.viewModel.passwordChangedSubject.send(password)
+      }.store(in: &cancellables)
   }
   
   override func startLoading() {
     
-    emailTextField.showAnimatedGradientSkeleton()
-    passwordTextField.showAnimatedGradientSkeleton()
-    signInButton.showAnimatedGradientSkeleton()
+    startSkeletoning([
+      emailTextField,
+      passwordTextField,
+      signInButton
+    ])
   }
   
   override func stopLoading() {
     
-    emailTextField.stopSkeletonAnimation()
+    stopSkeletoning([
+      emailTextField,
+      passwordTextField,
+      signInButton
+    ])
   }
 }

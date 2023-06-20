@@ -34,10 +34,18 @@
 		684231222A417AAF004E71B9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684231212A417AAF004E71B9 /* UIColor+Extensions.swift */; };
 		684231242A418359004E71B9 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684231232A418359004E71B9 /* PrimaryButton.swift */; };
 		684231272A418FCD004E71B9 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 684231262A418FCD004E71B9 /* SkeletonView */; };
-		684231302A419B2C004E71B9 /* BaseNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6842312F2A419B2C004E71B9 /* BaseNavigationManager.swift */; };
+		684231302A419B2C004E71B9 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6842312F2A419B2C004E71B9 /* NavigationManager.swift */; };
 		684231322A419C29004E71B9 /* AuthNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684231312A419C29004E71B9 /* AuthNavigationManager.swift */; };
 		8C42009A2A41C600006A5264 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4200992A41C600006A5264 /* UIImage+Extensions.swift */; };
 		8C700B252A41E253000A7001 /* SecureFloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B242A41E253000A7001 /* SecureFloatingTextField.swift */; };
+		8C700B292A41E974000A7001 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B282A41E974000A7001 /* UserService.swift */; };
+		8C700B2B2A41E9FF000A7001 /* SupabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B2A2A41E9FF000A7001 /* SupabaseManager.swift */; };
+		8C700B2E2A41EA25000A7001 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B2D2A41EA25000A7001 /* Constants.swift */; };
+		8C700B362A41F003000A7001 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B352A41F003000A7001 /* UIViewController+Extensions.swift */; };
+		8C700B382A41F109000A7001 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B372A41F109000A7001 /* TextButton.swift */; };
+		8C700B3B2A41F4C5000A7001 /* ButtonWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B3A2A41F4C5000A7001 /* ButtonWithLabel.swift */; };
+		8C700B3E2A41FDDB000A7001 /* AppScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B3D2A41FDDB000A7001 /* AppScrollView.swift */; };
+		8C700B422A420EF7000A7001 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C700B412A420EF7000A7001 /* IQKeyboardManagerSwift */; };
 		8C84B4DA2A40C94C0054A127 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C84B4D92A40C94C0054A127 /* SnapKit */; };
 		8C8ADE0E2A40CA5B0049FA99 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8C8ADE0D2A40CA5B0049FA99 /* Supabase */; };
 		8C8ADE152A40CAEC0049FA99 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8ADE142A40CAEC0049FA99 /* FloatingTextField.swift */; };
@@ -99,10 +107,17 @@
 		6842311F2A417760004E71B9 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		684231212A417AAF004E71B9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		684231232A418359004E71B9 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
-		6842312F2A419B2C004E71B9 /* BaseNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationManager.swift; sourceTree = "<group>"; };
+		6842312F2A419B2C004E71B9 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		684231312A419C29004E71B9 /* AuthNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationManager.swift; sourceTree = "<group>"; };
 		8C4200992A41C600006A5264 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		8C700B242A41E253000A7001 /* SecureFloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureFloatingTextField.swift; sourceTree = "<group>"; };
+		8C700B282A41E974000A7001 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		8C700B2A2A41E9FF000A7001 /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseManager.swift; sourceTree = "<group>"; };
+		8C700B2D2A41EA25000A7001 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8C700B352A41F003000A7001 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		8C700B372A41F109000A7001 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		8C700B3A2A41F4C5000A7001 /* ButtonWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithLabel.swift; sourceTree = "<group>"; };
+		8C700B3D2A41FDDB000A7001 /* AppScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScrollView.swift; sourceTree = "<group>"; };
 		8C8ADE142A40CAEC0049FA99 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
 		8C8ADE1E2A40CB9D0049FA99 /* UIView+New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+New.swift"; sourceTree = "<group>"; };
 		8C8ADE2C2A40CD6F0049FA99 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
@@ -128,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C8ADE0E2A40CA5B0049FA99 /* Supabase in Frameworks */,
+				8C700B422A420EF7000A7001 /* IQKeyboardManagerSwift in Frameworks */,
 				684231272A418FCD004E71B9 /* SkeletonView in Frameworks */,
 				8C84B4DA2A40C94C0054A127 /* SnapKit in Frameworks */,
 			);
@@ -180,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				684231232A418359004E71B9 /* PrimaryButton.swift */,
+				8C700B372A41F109000A7001 /* TextButton.swift */,
+				8C700B3A2A41F4C5000A7001 /* ButtonWithLabel.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -220,15 +238,41 @@
 		684231282A4198CD004E71B9 /* NavigationManager */ = {
 			isa = PBXGroup;
 			children = (
-				6842312F2A419B2C004E71B9 /* BaseNavigationManager.swift */,
+				6842312F2A419B2C004E71B9 /* NavigationManager.swift */,
 				684231312A419C29004E71B9 /* AuthNavigationManager.swift */,
 			);
 			path = NavigationManager;
 			sourceTree = "<group>";
 		};
+		8C700B272A41E965000A7001 /* Supabase */ = {
+			isa = PBXGroup;
+			children = (
+				8C700B282A41E974000A7001 /* UserService.swift */,
+				8C700B2A2A41E9FF000A7001 /* SupabaseManager.swift */,
+			);
+			path = Supabase;
+			sourceTree = "<group>";
+		};
+		8C700B2C2A41EA1A000A7001 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8C700B2D2A41EA25000A7001 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		8C700B3C2A41FDD0000A7001 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				8C700B3D2A41FDDB000A7001 /* AppScrollView.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
 		8C8ADE0F2A40CA610049FA99 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				8C700B3C2A41FDD0000A7001 /* ScrollView */,
 				6842311E2A417742004E71B9 /* Fonts */,
 				684230F62A417528004E71B9 /* Buttons */,
 				684230F12A417313004E71B9 /* Colors */,
@@ -282,6 +326,7 @@
 				8C8ADE2E2A40CDA40049FA99 /* UIView+Extensions.swift */,
 				684231212A417AAF004E71B9 /* UIColor+Extensions.swift */,
 				8C4200992A41C600006A5264 /* UIImage+Extensions.swift */,
+				8C700B352A41F003000A7001 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,6 +371,8 @@
 		8CE828382A40C55E0089BB07 /* MetaKhan */ = {
 			isa = PBXGroup;
 			children = (
+				8C700B2C2A41EA1A000A7001 /* Constants */,
+				8C700B272A41E965000A7001 /* Supabase */,
 				684231282A4198CD004E71B9 /* NavigationManager */,
 				684230EA2A4166E1004E71B9 /* Base */,
 				8CE828472A40C55F0089BB07 /* Info.plist */,
@@ -375,6 +422,7 @@
 				8C84B4D92A40C94C0054A127 /* SnapKit */,
 				8C8ADE0D2A40CA5B0049FA99 /* Supabase */,
 				684231262A418FCD004E71B9 /* SkeletonView */,
+				8C700B412A420EF7000A7001 /* IQKeyboardManagerSwift */,
 			);
 			productName = MetaKhan;
 			productReference = 8CE828362A40C55E0089BB07 /* MetaKhan.app */;
@@ -452,6 +500,7 @@
 				8C84B4D82A40C94C0054A127 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8C8ADE0C2A40CA5B0049FA99 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 				684231252A418FCD004E71B9 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				8C700B402A420EF7000A7001 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 8CE828372A40C55E0089BB07 /* Products */;
 			projectDirPath = "";
@@ -517,22 +566,29 @@
 				8C8ADE322A40D6B90049FA99 /* SignInViewController.swift in Sources */,
 				684230EE2A4166FF004E71B9 /* BaseViewModel.swift in Sources */,
 				8C8ADE2F2A40CDA40049FA99 /* UIView+Extensions.swift in Sources */,
+				8C700B3E2A41FDDB000A7001 /* AppScrollView.swift in Sources */,
 				8CE8283A2A40C55E0089BB07 /* AppDelegate.swift in Sources */,
 				684230E92A41667D004E71B9 /* KeyboardHandler.swift in Sources */,
+				8C700B2E2A41EA25000A7001 /* Constants.swift in Sources */,
 				684230F32A41732B004E71B9 /* AppColor.swift in Sources */,
 				684231322A419C29004E71B9 /* AuthNavigationManager.swift in Sources */,
 				8CE8283C2A40C55E0089BB07 /* SceneDelegate.swift in Sources */,
-				684231302A419B2C004E71B9 /* BaseNavigationManager.swift in Sources */,
+				684231302A419B2C004E71B9 /* NavigationManager.swift in Sources */,
 				684230EC2A4166ED004E71B9 /* BaseViewController.swift in Sources */,
+				8C700B362A41F003000A7001 /* UIViewController+Extensions.swift in Sources */,
 				8C8ADE352A40D80A0049FA99 /* SignInViewModel.swift in Sources */,
 				684231242A418359004E71B9 /* PrimaryButton.swift in Sources */,
 				684231222A417AAF004E71B9 /* UIColor+Extensions.swift in Sources */,
+				8C700B382A41F109000A7001 /* TextButton.swift in Sources */,
+				8C700B292A41E974000A7001 /* UserService.swift in Sources */,
 				684231202A417760004E71B9 /* AppFont.swift in Sources */,
 				8C8ADE2D2A40CD6F0049FA99 /* UIStackView+Extensions.swift in Sources */,
 				8C700B252A41E253000A7001 /* SecureFloatingTextField.swift in Sources */,
 				8C42009A2A41C600006A5264 /* UIImage+Extensions.swift in Sources */,
+				8C700B2B2A41E9FF000A7001 /* SupabaseManager.swift in Sources */,
 				8C8ADE152A40CAEC0049FA99 /* FloatingTextField.swift in Sources */,
 				8C8ADE1F2A40CB9D0049FA99 /* UIView+New.swift in Sources */,
+				8C700B3B2A41F4C5000A7001 /* ButtonWithLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,6 +930,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		8C700B402A420EF7000A7001 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		8C84B4D82A40C94C0054A127 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -897,6 +961,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 684231252A418FCD004E71B9 /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
+		};
+		8C700B412A420EF7000A7001 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C700B402A420EF7000A7001 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		8C84B4D92A40C94C0054A127 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

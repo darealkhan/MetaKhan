@@ -13,7 +13,7 @@ import SkeletonView
 
 final class SecureFloatingTextField: UIView {
   
-  private let textChangedSubject = PassthroughSubject<String, Never>()
+  let textChangedSubject = PassthroughSubject<String, Never>()
   
   private var stackView: UIStackView!
   private var placeHolder: UILabel!

@@ -13,7 +13,7 @@ import SkeletonView
 
 final class FloatingTextField: UIView {
   
-  private let textChangedSubject = PassthroughSubject<String, Never>()
+  let textChangedSubject = PassthroughSubject<String, Never>()
   
   private var stackView: UIStackView!
   private var placeHolder: UILabel!
@@ -54,12 +54,12 @@ final class FloatingTextField: UIView {
     }
     
     textField = UITextField.new {
-      $0.autocapitalizationType = .none
-      $0.autocorrectionType = .no
       $0.font = AppFont.poppins(ofSize: 14, weight: .regular)
-      $0.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
-      $0.textColor = .label
       $0.isHidden = true
+      $0.textColor = .label
+      $0.autocorrectionType = .no
+      $0.autocapitalizationType = .none
+      $0.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
     textField.delegate = self

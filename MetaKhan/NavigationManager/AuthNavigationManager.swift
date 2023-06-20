@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-extension BaseNavigationManager {
+extension NavigationManager {
   struct Auth: NavigationManagerProtocol {
     static var navigationController: UINavigationController? {
-      return BaseNavigationManager.shared.getNavigationController()
+      return NavigationManager.shared.getNavigationController()
     }
     
     static func pushSignUp() {
