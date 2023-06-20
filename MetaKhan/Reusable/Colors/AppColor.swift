@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import UIKit
+
+struct AppColor {
+  static var primaryColor: UIColor {
+    return UIColor(hex: "#FAF0E4")
+  }
+}

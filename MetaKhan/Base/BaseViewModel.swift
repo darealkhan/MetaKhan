@@ -6,3 +6,19 @@
 //
 
 import Foundation
+import Combine
+
+protocol BaseViewModelProtocol {
+  
+  func setupBinds()
+}
+
+class BaseViewModel {
+  
+  var cancellables = Set<AnyCancellable>()
+  
+  deinit {
+    
+    cancellables = []
+  }
+}

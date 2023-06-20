@@ -47,15 +47,16 @@ final class FloatingTextField: UIView {
     }
     
     placeHolder = UILabel.new {
-      $0.text = "hey"
-      $0.font = .systemFont(ofSize: 14)
+      $0.font = AppFont.poppins(ofSize: 14, weight: .regular)
+      $0.textColor = .label
     }
     
     textField = UITextField.new {
       $0.autocapitalizationType = .none
       $0.autocorrectionType = .no
-      $0.font = .systemFont(ofSize: 14)
+      $0.font = AppFont.poppins(ofSize: 14, weight: .regular)
       $0.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+      $0.textColor = .label
       $0.isHidden = true
     }
     
@@ -91,7 +92,8 @@ final class FloatingTextField: UIView {
   private func setupLayoutViews() {
     
     layer.cornerRadius = 12
-    backgroundColor = .red
+    layer.masksToBounds = true
+    backgroundColor = .systemGray4
   }
   
   @objc private func textFieldChanged() {
@@ -107,7 +109,7 @@ final class FloatingTextField: UIView {
       self.textField.becomeFirstResponder()
     }
     UIView.transition(with: placeHolder, duration: 0.3, options: .transitionCrossDissolve) {
-      self.placeHolder.font = .systemFont(ofSize: 12)
+      self.placeHolder.font = AppFont.poppins(ofSize: 12, weight: .regular)
     }
   }
   
