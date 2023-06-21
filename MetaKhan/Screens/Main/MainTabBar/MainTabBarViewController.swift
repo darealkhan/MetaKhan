@@ -13,6 +13,7 @@ import Combine
 final class MainTabBarViewController: UITabBarController {
   
   private var tabBarView: MainTabBarView!
+  private var spaceOnBottom: UIView!
   private var cancellables = Set<AnyCancellable>()
 
   override func viewDidLoad() {
@@ -39,7 +40,7 @@ final class MainTabBarViewController: UITabBarController {
     
     tabBar.isHidden = true
     
-    let spaceOnBottom = UIView.new {
+    spaceOnBottom = UIView.new {
       $0.backgroundColor = .systemBackground
     }
     tabBarView = MainTabBarView()
@@ -61,11 +62,43 @@ final class MainTabBarViewController: UITabBarController {
     }
   }
   
+  private func hideTabBar() {
+    UIView.transition(with: tabBarView, duration: 0.25, options: .transitionCrossDissolve) {
+      self.tabBarView.layer.opacity = 0
+    }
+    
+    UIView.transition(with: spaceOnBottom, duration: 0.25, options: .transitionCrossDissolve) {
+      self.spaceOnBottom.layer.opacity = 0
+    }
+  }
+  
+  private func showTabBar() {
+    UIView.transition(with: tabBarView, duration: 0.25, options: .transitionCrossDissolve) {
+      self.tabBarView.layer.opacity = 1
+    }
+    
+    UIView.transition(with: spaceOnBottom, duration: 0.25, options: .transitionCrossDissolve) {
+      self.spaceOnBottom.layer.opacity = 1
+    }
+  }
+  
   private func setupBinds() {
     tabBarView.tabChangedSubject
       .sink { [weak self] selectedItem in
         guard let self = self else { return }
         self.handleTabBarChange(with: selectedItem)
+      }.store(in: &cancellables)
+    
+    NotificationCenter.default.publisher(for: .showTab, object: nil)
+      .sink { [weak self] _ in
+        guard let self = self else { return }
+        showTabBar()
+      }.store(in: &cancellables)
+    
+    NotificationCenter.default.publisher(for: .hideTab, object: nil)
+      .sink { [weak self] _ in
+        guard let self = self else { return }
+        hideTabBar()
       }.store(in: &cancellables)
   }
   

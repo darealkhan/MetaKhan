@@ -13,6 +13,7 @@ protocol BaseViewControllerProtocol {
   
   var navigationBarTitle: String { get }
   var isNavigationBarSeperatorAvailable: Bool { get }
+  var isTabBarAvailable: Bool { get }
   
   func setupViews()
   func setupBinds()
@@ -27,11 +28,11 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
   
   var navigationBarTitle: String { return "" }
   var isNavigationBarSeperatorAvailable: Bool { return true }
+  var isTabBarAvailable: Bool { return false }
   
   var cancellables = Set<AnyCancellable>()
   
   override func viewDidLoad() {
-    
     super.viewDidLoad()
     
     setupViewAppearance()
@@ -41,10 +42,10 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    
     super.viewWillAppear(animated)
     
     setupNavigationBar()
+    setupTabBar()
   }
   
   deinit {
@@ -88,6 +89,15 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
     navigationController?.navigationBar.scrollEdgeAppearance = appearance
     navigationController?.navigationBar.compactAppearance = appearance
     navigationController?.navigationBar.compactScrollEdgeAppearance = appearance
+  }
+  
+  private func setupTabBar() {
+    var notification: NSNotification.Name {
+      guard isTabBarAvailable else { return .hideTab }
+      return .showTab
+    }
+    
+    NSNotification.post(name: notification)
   }
   
   func setupViews() {}

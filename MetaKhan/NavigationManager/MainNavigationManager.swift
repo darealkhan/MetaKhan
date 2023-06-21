@@ -13,11 +13,5 @@ extension NavigationManager {
     static var navigationController: UINavigationController? {
       return NavigationManager.shared.getNavigationController()
     }
-    
-    static func pushYellow() {
-      let signUp = UIViewController()
-      signUp.view.backgroundColor = .yellow
-      navigationController?.pushViewController(signUp, animated: true)
-    }
   }
 }

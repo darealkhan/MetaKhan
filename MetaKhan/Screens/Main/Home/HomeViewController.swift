@@ -12,17 +12,7 @@ import SnapKit
 final class HomeViewController: BaseViewController {
   
   override var navigationBarTitle: String { return "Home" }
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-      let vc = UIViewController()
-      vc.view.backgroundColor = .yellow
-      vc.hidesBottomBarWhenPushed = true
-      NavigationManager.Main.pushYellow()
-    }
-  }
+  override var isTabBarAvailable: Bool { return true }
   
   override func setupViews() {
   }
