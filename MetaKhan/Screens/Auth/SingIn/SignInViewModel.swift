@@ -13,8 +13,8 @@ final class SignInViewModel: BaseViewModel {
   
   private let service = UserService()
   
-  private var email: String = ""
-  private var password: String = ""
+  private var email: String = "aykhanseferli@gmail.com"
+  private var password: String = "ayxan2004"
   
   var signInButtonTappedSubject = PassthroughSubject<Void, Never>()
   var signUpButtonTappedSubject = PassthroughSubject<Void, Never>()
@@ -39,7 +39,7 @@ final class SignInViewModel: BaseViewModel {
     
     signUpButtonTappedSubject
       .sink {
-        NavigationManager.shared.changeRoot(with: MainTabBarViewController())
+        NavigationManager.Auth.pushSignUp()
       }.store(in: &cancellables)
     
     emailChangedSubject
@@ -66,7 +66,7 @@ final class SignInViewModel: BaseViewModel {
       
       switch result {
       case .success:
-        print("success")
+        await NavigationManager.shared.changeRoot(with: MainTabBarViewController())
       case .failure:
         print("failure")
       }

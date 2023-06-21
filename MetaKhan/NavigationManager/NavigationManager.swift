@@ -12,23 +12,25 @@ protocol NavigationManagerProtocol {
   static var navigationController: UINavigationController? { get }
 }
 
-struct NavigationManager {
+final class NavigationManager {
   static var shared = NavigationManager()
   
   var window: UIWindow?
   var navigationController: UINavigationController?
   
-  mutating func setWindow(_ window: UIWindow) {
+  func setWindow(_ window: UIWindow) {
     self.window = window
   }
   
-  mutating func setNavigationController(_ navigationController: UINavigationController) {
+  func setNavigationController(_ navigationController: UINavigationController) {
     self.navigationController = navigationController
   }
   
-  mutating func changeRoot(with controller: UIViewController) {
-    window?.rootViewController = controller
-    window?.makeKeyAndVisible()
+  func changeRoot(with controller: UIViewController) {
+    DispatchQueue.main.async {
+      self.window?.rootViewController = controller
+      self.window?.makeKeyAndVisible()
+    }
   }
   
   func pop() {

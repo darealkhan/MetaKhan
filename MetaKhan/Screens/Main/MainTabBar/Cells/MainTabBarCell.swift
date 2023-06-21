@@ -11,6 +11,8 @@ import SnapKit
 
 final class MainTabBarCell: BaseCollectionViewCell {
   
+  private var tabView: UIImageView!
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
     
@@ -22,7 +24,22 @@ final class MainTabBarCell: BaseCollectionViewCell {
   }
   
   private func setupViews() {
+    tabView = UIImageView.new {
+      $0.contentMode = .scaleAspectFit
+    }
     
+    contentView.addSubview(tabView)
+    
+    tabView.snp.makeConstraints { make in
+      make.top.leading.equalToSuperview().offset(20)
+      make.bottom.trailing.equalToSuperview().offset(-20)
+    }
+  }
+  
+  func configureCell(with model: UIModel) {
+    guard model.type != .share else { return }
+    tabView.image = UIImage(named: model.imageName)
+    tabView.tintColor = model.tintColor
   }
 }
 
@@ -33,6 +50,11 @@ extension MainTabBarCell {
     let type: MainTabBarViewController.TabBarItem
     
     var isSelected: Bool
+    
+    var tintColor: UIColor {
+      guard isSelected else { return UIColor.systemGray }
+      return AppColor.primaryColor
+    }
     
     var rawString: String {
       switch type {
@@ -55,7 +77,7 @@ extension MainTabBarCell {
     }
     
     static func getCells(selectedCell: MainTabBarViewController.TabBarItem) -> [UIModel] {
-      var cells = [
+      let cells = [
         UIModel(type: .home, isSelected: false),
         UIModel(type: .search, isSelected: false),
         UIModel(type: .share, isSelected: false),

@@ -70,13 +70,13 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
       .withInset(UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 0))
 
     navigationController?.navigationBar.tintColor = .label
-    navigationController?.navigationBar.titleTextAttributes = [
-      NSAttributedString.Key.font: AppFont.poppins(ofSize: 14, weight: .medium)
-    ]
     
     let appearance = UINavigationBarAppearance()
     appearance.setBackIndicatorImage(backImage, transitionMaskImage: backImage)
     appearance.backgroundColor = .systemBackground
+    appearance.titleTextAttributes = [
+      NSAttributedString.Key.font: AppFont.poppins(ofSize: 16, weight: .medium)
+    ]
     
     if isNavigationBarSeperatorAvailable {
       appearance.configureWithOpaqueBackground()

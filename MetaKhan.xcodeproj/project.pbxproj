@@ -36,6 +36,9 @@
 		684231272A418FCD004E71B9 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 684231262A418FCD004E71B9 /* SkeletonView */; };
 		684231302A419B2C004E71B9 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6842312F2A419B2C004E71B9 /* NavigationManager.swift */; };
 		684231322A419C29004E71B9 /* AuthNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684231312A419C29004E71B9 /* AuthNavigationManager.swift */; };
+		6899F49E2A42D1E60096DEA8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899F49D2A42D1E60096DEA8 /* HomeViewController.swift */; };
+		6899F4A12A42F5470096DEA8 /* AppTextLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899F4A02A42F5470096DEA8 /* AppTextLogoView.swift */; };
+		6899F4A32A42FE260096DEA8 /* MainNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899F4A22A42FE260096DEA8 /* MainNavigationManager.swift */; };
 		8C42009A2A41C600006A5264 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4200992A41C600006A5264 /* UIImage+Extensions.swift */; };
 		8C700B252A41E253000A7001 /* SecureFloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B242A41E253000A7001 /* SecureFloatingTextField.swift */; };
 		8C700B292A41E974000A7001 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B282A41E974000A7001 /* UserService.swift */; };
@@ -117,6 +120,9 @@
 		684231232A418359004E71B9 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		6842312F2A419B2C004E71B9 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		684231312A419C29004E71B9 /* AuthNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationManager.swift; sourceTree = "<group>"; };
+		6899F49D2A42D1E60096DEA8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6899F4A02A42F5470096DEA8 /* AppTextLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextLogoView.swift; sourceTree = "<group>"; };
+		6899F4A22A42FE260096DEA8 /* MainNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationManager.swift; sourceTree = "<group>"; };
 		8C4200992A41C600006A5264 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		8C700B242A41E253000A7001 /* SecureFloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureFloatingTextField.swift; sourceTree = "<group>"; };
 		8C700B282A41E974000A7001 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -258,8 +264,32 @@
 			children = (
 				6842312F2A419B2C004E71B9 /* NavigationManager.swift */,
 				684231312A419C29004E71B9 /* AuthNavigationManager.swift */,
+				6899F4A22A42FE260096DEA8 /* MainNavigationManager.swift */,
 			);
 			path = NavigationManager;
+			sourceTree = "<group>";
+		};
+		6899F49C2A42D1DA0096DEA8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6899F49D2A42D1E60096DEA8 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6899F49F2A42F5290096DEA8 /* AppLogo */ = {
+			isa = PBXGroup;
+			children = (
+				6899F4A02A42F5470096DEA8 /* AppTextLogoView.swift */,
+			);
+			path = AppLogo;
+			sourceTree = "<group>";
+		};
+		6899F4A42A4300DF0096DEA8 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		8C700B272A41E965000A7001 /* Supabase */ = {
@@ -307,6 +337,8 @@
 		8C700B4A2A421FD6000A7001 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				6899F4A42A4300DF0096DEA8 /* New Group */,
+				6899F49C2A42D1DA0096DEA8 /* Home */,
 				8C700B4B2A421FDB000A7001 /* MainTabBar */,
 			);
 			path = Main;
@@ -333,6 +365,7 @@
 		8C8ADE0F2A40CA610049FA99 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				6899F49F2A42F5290096DEA8 /* AppLogo */,
 				8C700B3C2A41FDD0000A7001 /* ScrollView */,
 				6842311E2A417742004E71B9 /* Fonts */,
 				684230F62A417528004E71B9 /* Buttons */,
@@ -629,6 +662,7 @@
 				8C700B532A423124000A7001 /* MainTabBarCell.swift in Sources */,
 				684230F52A4173FC004E71B9 /* BaseNavigationController.swift in Sources */,
 				8C8ADE322A40D6B90049FA99 /* SignInViewController.swift in Sources */,
+				6899F4A12A42F5470096DEA8 /* AppTextLogoView.swift in Sources */,
 				684230EE2A4166FF004E71B9 /* BaseViewModel.swift in Sources */,
 				8C8ADE2F2A40CDA40049FA99 /* UIView+Extensions.swift in Sources */,
 				8C700B3E2A41FDDB000A7001 /* AppScrollView.swift in Sources */,
@@ -649,6 +683,7 @@
 				8C700B472A421A13000A7001 /* SignUpViewModel.swift in Sources */,
 				684231222A417AAF004E71B9 /* UIColor+Extensions.swift in Sources */,
 				8C700B382A41F109000A7001 /* TextButton.swift in Sources */,
+				6899F49E2A42D1E60096DEA8 /* HomeViewController.swift in Sources */,
 				8C700B292A41E974000A7001 /* UserService.swift in Sources */,
 				684231202A417760004E71B9 /* AppFont.swift in Sources */,
 				8C8ADE2D2A40CD6F0049FA99 /* UIStackView+Extensions.swift in Sources */,
@@ -656,6 +691,7 @@
 				8C700B552A423131000A7001 /* UICollectionView+Extensions.swift in Sources */,
 				8C700B452A4213D5000A7001 /* SignUpViewController.swift in Sources */,
 				8C42009A2A41C600006A5264 /* UIImage+Extensions.swift in Sources */,
+				6899F4A32A42FE260096DEA8 /* MainNavigationManager.swift in Sources */,
 				8C700B2B2A41E9FF000A7001 /* SupabaseManager.swift in Sources */,
 				8C8ADE152A40CAEC0049FA99 /* FloatingTextField.swift in Sources */,
 				8C700B5B2A423A3A000A7001 /* ImageButton.swift in Sources */,

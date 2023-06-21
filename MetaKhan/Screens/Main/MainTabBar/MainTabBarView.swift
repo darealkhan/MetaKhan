@@ -8,10 +8,16 @@
 import Foundation
 import UIKit
 import SnapKit
+import Combine
 
 final class MainTabBarView: UIView {
   
+  let tabChangedSubject = PassthroughSubject<MainTabBarViewController.TabBarItem, Never>()
+  
   private var collectionView: UICollectionView!
+  private var shareButton: UIButton!
+  
+  private var tabs = MainTabBarCell.UIModel.getCells(selectedCell: .home)
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -24,6 +30,12 @@ final class MainTabBarView: UIView {
   }
   
   private func setupViews() {
+    backgroundColor = .systemBackground
+    
+    let divider = UIView.new {
+      $0.backgroundColor = .secondarySystemBackground
+    }
+    
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .horizontal
     
@@ -31,15 +43,31 @@ final class MainTabBarView: UIView {
     collectionView.delegate = self
     collectionView.dataSource = self
     
-    collectionView.register(MainTabBarCell.self)
-    collectionView.backgroundColor = .red
+    shareButton = UIButton(type: .system)
+    shareButton.setImage(UIImage(named: "tabbar_share_ic"), for: .normal)
+    shareButton.tintColor = AppColor.primaryColor
     
-    addSubview(collectionView)
+    collectionView.register(MainTabBarCell.self)
+    
+    addSubViews([
+      collectionView,
+      shareButton,
+      divider
+    ])
     
     collectionView.snp.makeConstraints { make in
-      make.bottom.equalToSuperview()
-      make.leading.trailing.equalToSuperview()
-      make.height.equalTo(60)
+      make.edges.equalToSuperview()
+    }
+    
+    shareButton.snp.makeConstraints { make in
+      make.center.equalToSuperview()
+      make.width.height.equalTo(30)
+    }
+    
+    divider.snp.makeConstraints { make in
+      make.top.equalToSuperview()
+      make.width.equalToSuperview()
+      make.height.equalTo(1)
     }
   }
 }
@@ -50,15 +78,22 @@ extension MainTabBarView: UICollectionViewDelegate, UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 5
+    return tabs.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let model = tabs[indexPath.row]
     let cell = collectionView.reusable(MainTabBarCell.self, for: indexPath)
-    let color = indexPath.row % 2 == 0 ? UIColor.green : UIColor.red
-    cell.backgroundColor = color
-    cell.contentView.backgroundColor = color
+    cell.configureCell(with: model)
     return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let selectedType = tabs[indexPath.row].type
+    guard selectedType != .share else { return }
+    tabs = MainTabBarCell.UIModel.getCells(selectedCell: selectedType)
+    collectionView.reloadData()
+    tabChangedSubject.send(selectedType)
   }
 }
 
