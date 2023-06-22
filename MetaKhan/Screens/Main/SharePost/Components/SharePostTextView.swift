@@ -35,10 +35,12 @@ final class SharePostTextView: UITextView {
   
   private func setupViews() {
     becomeFirstResponder()
+    delegate = self
     
     isSkeletonable = true
+    
     font = AppFont.poppins(ofSize: 16, weight: .regular)
-    delegate = self
+    autocorrectionType = .no
   }
   
   private func setupAfterLayout() {

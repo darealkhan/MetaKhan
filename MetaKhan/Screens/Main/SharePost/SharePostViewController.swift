@@ -26,7 +26,7 @@ final class SharePostViewController: BaseViewController {
   override func setupViews() {
     
     placeHolder = UILabel.new {
-      $0.text = "Say something about your thougts 🧐"
+      $0.text = "Say something about your thoughts 🧐"
       $0.font = AppFont.poppins(ofSize: 12, weight: .regular)
       $0.textColor = .secondaryLabel
       $0.isSkeletonable = true
