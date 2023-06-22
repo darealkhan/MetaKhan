@@ -19,4 +19,6 @@ public extension NSNotification {
 public extension NSNotification.Name {
   static let showTab = NSNotification.Name("showTab")
   static let hideTab = NSNotification.Name("hideTab")
+  
+  static let reloadHome = NSNotification.Name("reloadHome")
 }

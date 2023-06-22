@@ -9,11 +9,15 @@ import Foundation
 import UIKit
 
 final class HomeCollectionViewManager {
+  private var posts = [PostUIModel]()
+  
   init() {}
   
   func collectionView() -> UICollectionView {
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
     collectionView.register(HomePostCell.self)
+    collectionView.showsVerticalScrollIndicator = false
+    collectionView.isSkeletonable = true
     return collectionView
   }
   
@@ -22,8 +26,29 @@ final class HomeCollectionViewManager {
     
     switch section {
     default:
+      let uiModel = posts[indexPath.row]
       let cell = collectionView.reusable(HomePostCell.self, for: indexPath)
+      cell.configure(with: uiModel)
       return cell
+    }
+  }
+  
+  func collectionViewItemCount(with collectionView: UICollectionView, section: Int) -> Int {
+    let section = Section(rawValue: section)
+    
+    switch section {
+    default:
+      return posts.count
+    }
+  }
+  
+  func setPosts(
+    with collectionView: UICollectionView,
+    posts: [PostUIModel]
+  ) {
+    DispatchQueue.main.async {
+      self.posts = posts
+      collectionView.reloadData()
     }
   }
   
@@ -64,7 +89,7 @@ extension HomeCollectionViewManager {
       case .posts:
         return NSCollectionLayoutSize(
           widthDimension: .fractionalWidth(1),
-          heightDimension: .estimated(0)
+          heightDimension: .estimated(200)
         )
       }
     }
@@ -74,7 +99,7 @@ extension HomeCollectionViewManager {
       case .posts:
         return NSCollectionLayoutSize(
           widthDimension: .fractionalWidth(1),
-          heightDimension: .estimated(0)
+          heightDimension: .estimated(200)
         )
       }
     }

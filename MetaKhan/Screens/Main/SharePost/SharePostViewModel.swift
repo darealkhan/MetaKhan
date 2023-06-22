@@ -45,6 +45,7 @@ final class SharePostViewModel: BaseViewModel {
       switch result {
       case .success:
         NavigationManager.Main.dismissPresentedView()
+        NSNotification.post(name: .reloadHome)
       case .failure:
         print("failure")
       }

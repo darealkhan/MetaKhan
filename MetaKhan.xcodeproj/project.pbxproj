@@ -84,6 +84,9 @@
 		8CF9A2D52A446A2E00D75A71 /* HapticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9A2D42A446A2E00D75A71 /* HapticsService.swift */; };
 		8CF9A2DA2A4471B800D75A71 /* HomeCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9A2D92A4471B800D75A71 /* HomeCollectionViewManager.swift */; };
 		8CF9A2DD2A4476AE00D75A71 /* HomePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9A2DC2A4476AE00D75A71 /* HomePostCell.swift */; };
+		8CF9A2E12A44C67200D75A71 /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9A2E02A44C67200D75A71 /* PostResponse.swift */; };
+		8CF9A2E62A44C88200D75A71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9A2E52A44C88200D75A71 /* HomeViewModel.swift */; };
+		8CF9A2EA2A44CA0A00D75A71 /* PostUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9A2E92A44CA0A00D75A71 /* PostUIModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +184,9 @@
 		8CF9A2D42A446A2E00D75A71 /* HapticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsService.swift; sourceTree = "<group>"; };
 		8CF9A2D92A4471B800D75A71 /* HomeCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewManager.swift; sourceTree = "<group>"; };
 		8CF9A2DC2A4476AE00D75A71 /* HomePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCell.swift; sourceTree = "<group>"; };
+		8CF9A2E02A44C67200D75A71 /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
+		8CF9A2E52A44C88200D75A71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8CF9A2E92A44CA0A00D75A71 /* PostUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUIModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +305,7 @@
 				8CF9A2DB2A4476A400D75A71 /* Cells */,
 				8CF9A2D62A446D1100D75A71 /* Components */,
 				6899F49D2A42D1E60096DEA8 /* HomeViewController.swift */,
+				8CF9A2E52A44C88200D75A71 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -507,6 +514,7 @@
 		8CE828382A40C55E0089BB07 /* MetaKhan */ = {
 			isa = PBXGroup;
 			children = (
+				8CF9A2E72A44C9FB00D75A71 /* UIModel */,
 				8CF9A2D22A446A1800D75A71 /* Services */,
 				6899F4A72A43056C0096DEA8 /* Core */,
 				8C700B2C2A41EA1A000A7001 /* Constants */,
@@ -560,19 +568,20 @@
 		8CF9A2C92A43820F00D75A71 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8CF9A2CA2A43821600D75A71 /* PostRequests */,
+				8CF9A2DF2A44C65A00D75A71 /* Requests */,
+				8CF9A2DE2A44C64800D75A71 /* Responses */,
 				68DA43852A4417AA003799E9 /* RequestWithUserIdProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		8CF9A2CA2A43821600D75A71 /* PostRequests */ = {
+		8CF9A2CA2A43821600D75A71 /* Post */ = {
 			isa = PBXGroup;
 			children = (
 				8CF9A2CC2A43823700D75A71 /* PostRequests.swift */,
 				8CF9A2CE2A43825700D75A71 /* PostRequests+Share.swift */,
 			);
-			path = PostRequests;
+			path = Post;
 			sourceTree = "<group>";
 		};
 		8CF9A2D22A446A1800D75A71 /* Services */ = {
@@ -605,6 +614,38 @@
 				8CF9A2DC2A4476AE00D75A71 /* HomePostCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8CF9A2DE2A44C64800D75A71 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				8CF9A2E22A44C67500D75A71 /* Post */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		8CF9A2DF2A44C65A00D75A71 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				8CF9A2CA2A43821600D75A71 /* Post */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		8CF9A2E22A44C67500D75A71 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				8CF9A2E02A44C67200D75A71 /* PostResponse.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		8CF9A2E72A44C9FB00D75A71 /* UIModel */ = {
+			isa = PBXGroup;
+			children = (
+				8CF9A2E92A44CA0A00D75A71 /* PostUIModel.swift */,
+			);
+			path = UIModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -770,6 +811,7 @@
 				8C700B532A423124000A7001 /* MainTabBarCell.swift in Sources */,
 				684230F52A4173FC004E71B9 /* BaseNavigationController.swift in Sources */,
 				8C8ADE322A40D6B90049FA99 /* SignInViewController.swift in Sources */,
+				8CF9A2E12A44C67200D75A71 /* PostResponse.swift in Sources */,
 				6899F4A12A42F5470096DEA8 /* AppTextLogoView.swift in Sources */,
 				684230EE2A4166FF004E71B9 /* BaseViewModel.swift in Sources */,
 				8C8ADE2F2A40CDA40049FA99 /* UIView+Extensions.swift in Sources */,
@@ -795,6 +837,7 @@
 				8CF9A2C22A43645100D75A71 /* SharePostTextView.swift in Sources */,
 				8CF9A2BF2A4337BF00D75A71 /* SharePostViewController.swift in Sources */,
 				8C700B472A421A13000A7001 /* SignUpViewModel.swift in Sources */,
+				8CF9A2EA2A44CA0A00D75A71 /* PostUIModel.swift in Sources */,
 				8CF9A2C82A43816200D75A71 /* SupbaseTableName.swift in Sources */,
 				8CF9A2D52A446A2E00D75A71 /* HapticsService.swift in Sources */,
 				684231222A417AAF004E71B9 /* UIColor+Extensions.swift in Sources */,
@@ -813,6 +856,7 @@
 				8CF9A2CF2A43825700D75A71 /* PostRequests+Share.swift in Sources */,
 				8C700B2B2A41E9FF000A7001 /* SupabaseManager.swift in Sources */,
 				8C8ADE152A40CAEC0049FA99 /* FloatingTextField.swift in Sources */,
+				8CF9A2E62A44C88200D75A71 /* HomeViewModel.swift in Sources */,
 				8C700B5B2A423A3A000A7001 /* ImageButton.swift in Sources */,
 				8C8ADE1F2A40CB9D0049FA99 /* UIView+New.swift in Sources */,
 				8CF9A2C42A436ABE00D75A71 /* SharePostViewModel.swift in Sources */,
