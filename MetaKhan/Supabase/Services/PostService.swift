@@ -13,21 +13,23 @@ protocol PostServiceType {
 }
 
 final class PostService: PostServiceType {
+  private let manager = SupabaseManager()
   private let table = SupabaseTableName.posts.rawValue
   
   func sharePost(with request: PostRequests.Share) async -> SharePostPartialState {
     do {
-      print(request)
-      print(SupabaseManager.currentUser?.id ?? "")
-      let result = try await SupabaseManager.client.database
+      await manager.setCurrentUser()
+      
+      var finalRequest = request
+      finalRequest.setUserId(with: manager.currentUser?.id)
+      
+      _ = try await manager.client.database
         .from(table)
-        .insert(values: request)
+        .insert(values: finalRequest)
         .execute()
       
-      print("success")
       return .success
     } catch {
-      print(error.localizedDescription)
       return .failure
     }
   }

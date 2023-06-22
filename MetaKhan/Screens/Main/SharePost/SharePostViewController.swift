@@ -29,6 +29,7 @@ final class SharePostViewController: BaseViewController {
       $0.text = "Say something about your thougts 🧐"
       $0.font = AppFont.poppins(ofSize: 12, weight: .regular)
       $0.textColor = .secondaryLabel
+      $0.isSkeletonable = true
     }
     
     keyboardHandler = KeyboardHandler()
@@ -36,6 +37,7 @@ final class SharePostViewController: BaseViewController {
     
     textView = SharePostTextView()
     shareButton = PrimaryButton(title: "Share 🤩")
+    shareButton.isDisabled(true)
     
     view.addSubViews([
       placeHolder,
@@ -53,7 +55,7 @@ final class SharePostViewController: BaseViewController {
       make.top.equalTo(placeHolder.snp.bottom).offset(24)
       make.leading.equalToSuperview().offset(20)
       make.trailing.equalToSuperview().offset(-20)
-      make.height.equalTo(100)
+      make.height.equalTo(150)
     }
     
     shareButton.snp.makeConstraints { make in
@@ -64,7 +66,6 @@ final class SharePostViewController: BaseViewController {
   }
   
   override func setupBinds() {
-    
     textView.textViewChangedSubject
       .sink { [weak self] newValue in
         guard let self = self else { return }
@@ -76,6 +77,40 @@ final class SharePostViewController: BaseViewController {
         guard let self = self else { return }
         self.viewModel.shareButtonTappedSubject.send(())
       }.store(in: &cancellables)
+    
+    viewModel.startLoadingSubject
+      .sink { [weak self] in
+        guard let self = self else { return }
+        self.startLoading()
+      }.store(in: &cancellables)
+    
+    viewModel.stopLoadingSubject
+      .sink { [weak self] in
+        guard let self = self else { return }
+        self.stopLoading()
+      }.store(in: &cancellables)
+    
+    viewModel.buttonDisabledSubject
+      .sink { [weak self] isDisabled in
+        guard let self = self else { return }
+        self.shareButton.isDisabled(isDisabled)
+      }.store(in: &cancellables)
+  }
+  
+  override func startLoading() {
+    startSkeletoning([
+      placeHolder,
+      shareButton,
+      textView
+    ])
+  }
+  
+  override func stopLoading() {
+    stopSkeletoning([
+      placeHolder,
+      shareButton,
+      textView
+    ])
   }
 }
 

@@ -30,12 +30,25 @@ final class PrimaryButton: UIButton {
     
     backgroundColor = AppColor.primaryColor
     setTitleColor(.white, for: .normal)
+    setTitleColor(.systemGray, for: .disabled)
     
     setTitle(title, for: .normal)
     
     isSkeletonable = true
     
     addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+  }
+  
+  func isDisabled(_ isDisabled: Bool) {
+    self.isEnabled = !isDisabled
+    
+    DispatchQueue.main.async {
+      if isDisabled {
+        self.backgroundColor = .secondarySystemBackground
+      } else {
+        self.backgroundColor = AppColor.primaryColor
+      }
+    }
   }
   
   required init?(coder: NSCoder) {

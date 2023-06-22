@@ -10,18 +10,16 @@ import Supabase
 
 final class SupabaseManager {
   
-  static var currentUser: User?
+  var currentUser: User?
   
-  static let client = SupabaseClient(
+  let client = SupabaseClient(
     supabaseURL: URL(string: Constants.supabaseURL)!,
     supabaseKey: Constants.supabaseKEY
   )
   
-  static func setCurrentUser() {
-    Task {
-      guard let userId = try? await client.auth.session.user.id else { return }
-      currentUser = User(id: userId.uuidString)
-    }
+  func setCurrentUser() async {
+    guard let userId = try? await client.auth.session.user.id else { return }
+    currentUser = User(id: userId.uuidString)
   }
 }
 

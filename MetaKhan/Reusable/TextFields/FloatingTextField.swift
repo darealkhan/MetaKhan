@@ -40,8 +40,6 @@ final class FloatingTextField: UIView {
   }
   
   private func setupViews() {
-    isSkeletonable = true
-    
     stackView = UIStackView.new {
       $0.axis = .vertical
       $0.alignment = .leading
@@ -63,6 +61,7 @@ final class FloatingTextField: UIView {
     }
     
     textField.delegate = self
+    isSkeletonable = true
     
     stackView.addArrangedSubviews([
       placeHolder,

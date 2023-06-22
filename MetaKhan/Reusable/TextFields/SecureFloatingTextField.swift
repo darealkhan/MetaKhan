@@ -44,8 +44,6 @@ final class SecureFloatingTextField: UIView {
   }
   
   private func setupViews() {
-    isSkeletonable = true
-    
     stackView = UIStackView.new {
       $0.axis = .vertical
       $0.alignment = .leading
@@ -73,6 +71,8 @@ final class SecureFloatingTextField: UIView {
     secureToggleButton.addTarget(self, action: #selector(secureToggleTapped), for: .touchUpInside)
     
     textField.delegate = self
+    
+    isSkeletonable = true
     
     stackView.addArrangedSubviews([
       placeHolder,

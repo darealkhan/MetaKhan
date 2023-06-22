@@ -14,12 +14,13 @@ protocol UserServiceType {
 }
 
 final class UserService: UserServiceType {
+  private var manager = SupabaseManager()
   
   func signIn(with email: String, password: String) async -> SignInPartialState {
     do {
-      let _ = try await SupabaseManager.client.auth
+      let _ = try await manager.client.auth
         .signIn(email: email, password: password)
-      SupabaseManager.setCurrentUser()
+      
       return .success
     } catch {
       return .failure
@@ -28,8 +29,9 @@ final class UserService: UserServiceType {
   
   func signUp(with email: String, password: String) async -> SignUpPartialState {
     do {
-      let _ = try await SupabaseManager.client.auth
+      let _ = try await manager.client.auth
         .signUp(email: email, password: password, redirectTo: nil)
+      
       return .success
     } catch {
       return .failure

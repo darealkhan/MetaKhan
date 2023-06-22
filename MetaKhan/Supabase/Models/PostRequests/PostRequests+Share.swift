@@ -8,8 +8,12 @@
 import Foundation
 
 extension PostRequests {
-  struct Share: Encodable {
-    var created_by: String = "0E45B741-96D0-4A03-9A18-92A858B7B75F"
+  struct Share: RequestWithUserId, Encodable {
+    var created_by: String = ""
     let post_text: String
+    
+    mutating func setUserId(with newValue: String?) {
+      self.created_by = newValue ?? ""
+    }
   }
 }

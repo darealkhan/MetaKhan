@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 import Combine
+import SkeletonView
 
 final class SharePostTextView: UITextView {
   
@@ -35,6 +36,7 @@ final class SharePostTextView: UITextView {
   private func setupViews() {
     becomeFirstResponder()
     
+    isSkeletonable = true
     font = AppFont.poppins(ofSize: 16, weight: .regular)
     delegate = self
   }

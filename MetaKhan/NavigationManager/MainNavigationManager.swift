@@ -19,5 +19,11 @@ extension NavigationManager {
       sharePost.modalPresentationStyle = .overFullScreen
       navigationController?.present(sharePost, animated: true)
     }
+    
+    static func dismissPresentedView() {
+      DispatchQueue.main.async {
+        navigationController?.dismiss(animated: true)
+      }
+    }
   }
 }

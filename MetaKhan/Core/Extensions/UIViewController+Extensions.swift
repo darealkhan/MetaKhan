@@ -15,6 +15,7 @@ extension UIViewController {
     
     DispatchQueue.main.async {
       for view in views {
+        view.isUserInteractionEnabled = false
         view.showAnimatedGradientSkeleton()
       }
     }
@@ -24,6 +25,7 @@ extension UIViewController {
     
     DispatchQueue.main.async {
       for view in views {
+        view.isUserInteractionEnabled = true
         view.hideSkeleton()
         view.stopSkeletonAnimation()
       }

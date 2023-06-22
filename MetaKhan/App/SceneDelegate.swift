@@ -7,10 +7,13 @@
 
 import UIKit
 import Supabase
+import Network
+import Combine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
+  private var path = NWPathMonitor()
 
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -27,6 +30,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     self.window = window
     
     window.makeKeyAndVisible()
+    
+    path.pathUpdateHandler = { path in
+      if path.status == .satisfied {
+          print("We're connected!")
+      } else {
+          print("No connection.")
+      }
+    }
+    path.start(queue: DispatchQueue(label: "hey"))
     
     NavigationManager.shared.setWindow(window)
     NavigationManager.shared.setNavigationController(navigationController)

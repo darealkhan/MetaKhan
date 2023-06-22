@@ -12,13 +12,13 @@ import UIKit
 final class SharePostViewModel: BaseViewModel {
   var shareButtonTappedSubject = PassthroughSubject<Void, Never>()
   var textViewChangedSubject = PassthroughSubject<String, Never>()
+  var buttonDisabledSubject = PassthroughSubject<Bool, Never>()
   
   private var postText = ""
   
   private let postService = PostService()
   
   override func setupBinds() {
-    
     shareButtonTappedSubject
       .sink { [weak self] in
         guard let self = self else { return }
@@ -26,9 +26,9 @@ final class SharePostViewModel: BaseViewModel {
       }.store(in: &cancellables)
     
     textViewChangedSubject
-      .sink { [weak self] postText in
+      .sink { [weak self] newValue in
         guard let self = self else { return }
-        self.postText = postText
+        self.handlePostTextChange(with: newValue)
       }.store(in: &cancellables)
   }
   
@@ -40,12 +40,24 @@ final class SharePostViewModel: BaseViewModel {
       
       let result = await postService.sharePost(with: request)
       
+      stopLoading()
+      
       switch result {
       case .success:
-        print("succces")
+        NavigationManager.Main.dismissPresentedView()
       case .failure:
         print("failure")
       }
     }
+  }
+  
+  private func handlePostTextChange(with newValue: String) {
+    var isButtonDisabled: Bool {
+      guard newValue.isEmpty else { return false }
+      return true
+    }
+    
+    self.postText = newValue
+    buttonDisabledSubject.send(isButtonDisabled)
   }
 }

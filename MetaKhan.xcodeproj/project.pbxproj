@@ -40,6 +40,7 @@
 		6899F4A12A42F5470096DEA8 /* AppTextLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899F4A02A42F5470096DEA8 /* AppTextLogoView.swift */; };
 		6899F4A32A42FE260096DEA8 /* MainNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899F4A22A42FE260096DEA8 /* MainNavigationManager.swift */; };
 		6899F4AA2A43057B0096DEA8 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899F4A92A43057B0096DEA8 /* Notifications.swift */; };
+		68DA43862A4417AA003799E9 /* RequestWithUserIdProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DA43852A4417AA003799E9 /* RequestWithUserIdProtocol.swift */; };
 		8C42009A2A41C600006A5264 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4200992A41C600006A5264 /* UIImage+Extensions.swift */; };
 		8C700B252A41E253000A7001 /* SecureFloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B242A41E253000A7001 /* SecureFloatingTextField.swift */; };
 		8C700B292A41E974000A7001 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C700B282A41E974000A7001 /* UserService.swift */; };
@@ -132,6 +133,7 @@
 		6899F4A02A42F5470096DEA8 /* AppTextLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextLogoView.swift; sourceTree = "<group>"; };
 		6899F4A22A42FE260096DEA8 /* MainNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationManager.swift; sourceTree = "<group>"; };
 		6899F4A92A43057B0096DEA8 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		68DA43852A4417AA003799E9 /* RequestWithUserIdProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestWithUserIdProtocol.swift; sourceTree = "<group>"; };
 		8C4200992A41C600006A5264 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		8C700B242A41E253000A7001 /* SecureFloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureFloatingTextField.swift; sourceTree = "<group>"; };
 		8C700B282A41E974000A7001 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -550,6 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				8CF9A2CA2A43821600D75A71 /* PostRequests */,
+				68DA43852A4417AA003799E9 /* RequestWithUserIdProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				684230EE2A4166FF004E71B9 /* BaseViewModel.swift in Sources */,
 				8C8ADE2F2A40CDA40049FA99 /* UIView+Extensions.swift in Sources */,
 				8C700B3E2A41FDDB000A7001 /* AppScrollView.swift in Sources */,
+				68DA43862A4417AA003799E9 /* RequestWithUserIdProtocol.swift in Sources */,
 				8CF9A2CD2A43823700D75A71 /* PostRequests.swift in Sources */,
 				8CE8283A2A40C55E0089BB07 /* AppDelegate.swift in Sources */,
 				684230E92A41667D004E71B9 /* KeyboardHandler.swift in Sources */,
