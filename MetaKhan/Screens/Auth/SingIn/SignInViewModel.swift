@@ -21,9 +21,6 @@ final class SignInViewModel: BaseViewModel {
   var emailChangedSubject = PassthroughSubject<String, Never>()
   var passwordChangedSubject = PassthroughSubject<String, Never>()
   
-  var startLoadingSubject = PassthroughSubject<Void, Never>()
-  var stopLoadingSubject = PassthroughSubject<Void, Never>()
-  
   override init() {
     super.init()
     
@@ -56,13 +53,13 @@ final class SignInViewModel: BaseViewModel {
   }
   
   func signIn() {
-    startLoadingSubject.send(())
+    startLoading()
     
     Task {
       
       let result = await service.signIn(with: email, password: password)
       
-      stopLoadingSubject.send(())
+      stopLoading()
       
       switch result {
       case .success:

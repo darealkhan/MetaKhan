@@ -13,5 +13,11 @@ extension NavigationManager {
     static var navigationController: UINavigationController? {
       return NavigationManager.shared.getNavigationController()
     }
+    
+    static func presentSharePost() {
+      let sharePost = BaseNavigationController(rootViewController: SharePostViewController())
+      sharePost.modalPresentationStyle = .overFullScreen
+      navigationController?.present(sharePost, animated: true)
+    }
   }
 }

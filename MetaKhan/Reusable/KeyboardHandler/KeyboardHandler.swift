@@ -49,7 +49,7 @@ final class KeyboardHandler {
     let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
     let keyboardHeight = keyboardSize.cgRectValue.height
     let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
-    let bottomOffset = keyboardHeight + offset
+    let bottomOffset = keyboardHeight - 20
     
     delegate?.keyboardWillShow(bottomOffset: bottomOffset, animationDuration: animationDuration)
   }

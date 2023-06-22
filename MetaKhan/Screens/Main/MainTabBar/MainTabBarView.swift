@@ -13,6 +13,7 @@ import Combine
 final class MainTabBarView: UIView {
   
   let tabChangedSubject = PassthroughSubject<MainTabBarViewController.TabBarItem, Never>()
+  let shareButtonTappedSubject = PassthroughSubject<Void, Never>()
   
   private var collectionView: UICollectionView!
   private var shareButton: UIButton!
@@ -46,6 +47,7 @@ final class MainTabBarView: UIView {
     shareButton = UIButton(type: .system)
     shareButton.setImage(UIImage(named: "tabbar_share_ic"), for: .normal)
     shareButton.tintColor = AppColor.primaryColor
+    shareButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
     
     collectionView.register(MainTabBarCell.self)
     
@@ -69,6 +71,10 @@ final class MainTabBarView: UIView {
       make.width.equalToSuperview()
       make.height.equalTo(1)
     }
+  }
+  
+  @objc private func shareButtonTapped() {
+    shareButtonTappedSubject.send(())
   }
 }
 

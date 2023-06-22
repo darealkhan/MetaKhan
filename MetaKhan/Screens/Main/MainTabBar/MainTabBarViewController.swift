@@ -89,6 +89,11 @@ final class MainTabBarViewController: UITabBarController {
         self.handleTabBarChange(with: selectedItem)
       }.store(in: &cancellables)
     
+    tabBarView.shareButtonTappedSubject
+      .sink {
+        NavigationManager.Main.presentSharePost()
+      }.store(in: &cancellables)
+    
     NotificationCenter.default.publisher(for: .showTab, object: nil)
       .sink { [weak self] _ in
         guard let self = self else { return }

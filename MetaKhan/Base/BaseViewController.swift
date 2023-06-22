@@ -14,6 +14,7 @@ protocol BaseViewControllerProtocol {
   var navigationBarTitle: String { get }
   var isNavigationBarSeperatorAvailable: Bool { get }
   var isTabBarAvailable: Bool { get }
+  var isPresented: Bool { get }
   
   func setupViews()
   func setupBinds()
@@ -29,6 +30,8 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
   var navigationBarTitle: String { return "" }
   var isNavigationBarSeperatorAvailable: Bool { return true }
   var isTabBarAvailable: Bool { return false }
+  var isPresented: Bool { return false }
+  var isTouchDimissKeyboard: Bool { return true }
   
   var cancellables = Set<AnyCancellable>()
   
@@ -38,7 +41,7 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
     setupViewAppearance()
     setupViews()
     setupBinds()
-    touchDismissKeyboard()
+    if isTouchDimissKeyboard { touchDismissKeyboard() }
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -67,13 +70,19 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
       action: nil
     )
     
-    let backImage = UIImage(named: "app_back_ic")?
-      .withInset(UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 0))
+    let leftInset: CGFloat = isPresented ? 0 : 2
+    let imageName: String = isPresented ? "app_close_ic" : "app_back_ic"
+    let backImage = UIImage(named: imageName)?
+      .withInset(UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: 0))
 
     navigationController?.navigationBar.tintColor = .label
     
     let appearance = UINavigationBarAppearance()
-    appearance.setBackIndicatorImage(backImage, transitionMaskImage: backImage)
+    if isPresented {
+      navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(dismissView))
+    } else {
+      appearance.setBackIndicatorImage(backImage, transitionMaskImage: backImage)
+    }
     appearance.backgroundColor = .systemBackground
     appearance.titleTextAttributes = [
       NSAttributedString.Key.font: AppFont.poppins(ofSize: 16, weight: .medium)
@@ -113,5 +122,9 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
   
   @objc private func viewTouched() {
     KeyboardHandler.hideKeyboard()
+  }
+  
+  @objc private func dismissView() {
+    dismiss(animated: true)
   }
 }
